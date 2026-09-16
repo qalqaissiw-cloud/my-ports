@@ -150,6 +150,14 @@ export function Education() {
                 <p className="mt-4 max-w-2xl text-[15px] leading-7 text-foreground/80">
                   {publication.summary}
                 </p>
+                <a
+                  href={publication.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="link-line mt-5 inline-block pb-0.5 text-[14px]"
+                >
+                  {publication.hrefLabel}
+                </a>
 
                 <dl className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
                   <div>

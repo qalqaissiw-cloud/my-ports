@@ -7,7 +7,9 @@ export const profile = {
   phone: "(+962) 0781156087",
   phoneHref: "+9620781156087",
   pitch:
-    "I identify vulnerabilities, ship internal tools used company-wide, and build open-source security software — from forensic CLIs to live network monitors. I also shoot travel and architecture.",
+    "I work at the intersection of cybersecurity, software development, and automation. I identify vulnerabilities, build internal tools used company-wide, and develop open-source security software — from forensic command-line tools to live network monitoring systems. When I’m away from the terminal, I’m usually photographing architecture or exploring somewhere new.",
+  availability:
+    "Open to cybersecurity, R&D, and full-stack roles — remote or based in Amman.",
   summary:
     "Cybersecurity graduate and R&D professional with hands-on experience spanning solutions development, team leadership, and customer support. Certified by globally recognized organizations, I excel in identifying vulnerabilities, analyzing threats, and securing systems, while also driving process improvement, cost savings, and internal tooling initiatives within industrial R&D environments — including leading a data audit across roughly 5 million FedEx billing records that saved $20K+ per week, and building internal tools used company-wide. I've shipped work through GitHub and GitLab across both development and production environments, delivered freelance full-stack solutions for external clients, and developed open-source security tools such as Caeruleum (forensic analysis) and Vigil (network traffic monitoring). I thrive in high-pressure environments and am committed to digital defense and impactful engineering. Outside of that work I photograph travel and architecture, including a body of work from Shanghai.",
 } as const;
@@ -15,6 +17,11 @@ export const profile = {
 export const socials = {
   github: "https://github.com/Cipher-Red",
   linkedin: "https://www.linkedin.com/in/qais-alqaissi-1b9295238",
+  researchgate: "https://www.researchgate.net/profile/Qais-Alqaissi",
+} as const;
+
+export const site = {
+  url: "https://my-ports.netlify.app",
 } as const;
 
 export const cv = {
@@ -169,7 +176,7 @@ export const projects: Project[] = [
     category: "Internal",
     description:
       "Internal, cross-departmental platform used company-wide at Detroit Axle. Covers break/time tracking, customer support workflows, sales visibility, and a scam-flagging feature built on Braintree transaction data.",
-    tags: ["Internal tooling", "R&D", "Payments", "Operations"],
+    tags: ["React", "PostgreSQL", "Python", "Braintree", "GitLab", "Operations"],
     href: "https://fast.detroitaxle.com/login?next=/",
     hrefLabel: "Visit FAST",
     links: [
@@ -183,8 +190,8 @@ export const projects: Project[] = [
     name: "Detroit Axle QA",
     category: "Internal",
     description:
-      "Internal website for the QA team with multi-factor authentication and hardened security controls across the tool surface.",
-    tags: ["MFA", "Security hardening", "QA"],
+      "Internal QA web app with multi-factor authentication, role-aware access, and hardened controls — a secure workspace for review workflows without exposing sensitive operations.",
+    tags: ["MFA", "Security hardening", "React", "QA"],
   },
   {
     name: "Weavers",
@@ -201,6 +208,8 @@ export const projects: Project[] = [
     description:
       "B2C, B2B, and internal management platform designed and developed for Adawat, a Jordan-based company.",
     tags: ["Full-stack", "B2B", "B2C", "React", "PostgreSQL"],
+    href: "https://adawat.net",
+    hrefLabel: "Visit Adawat",
   },
   {
     name: "One Piece Restaurant",
@@ -351,6 +360,8 @@ export const publication = {
   title: "Jamming and Anti-Jamming Techniques on Wireless Networks",
   venue: "ResearchGate",
   date: "December 2024",
+  href: "https://www.researchgate.net/profile/Qais-Alqaissi",
+  hrefLabel: "View on ResearchGate",
   summary:
     "Explores the vulnerabilities of wireless networks to jamming attacks and evaluates modern anti-jamming techniques to enhance network resilience.",
   metrics: {

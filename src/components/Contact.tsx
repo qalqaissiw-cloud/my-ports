@@ -9,6 +9,11 @@ const rows = [
   { label: "CV", value: cv.label, href: cv.href, download: cv.filename },
   { label: "LinkedIn", value: "linkedin.com/in/qais-alqaissi", href: socials.linkedin },
   { label: "GitHub", value: "github.com/Cipher-Red", href: socials.github },
+  {
+    label: "ResearchGate",
+    value: "researchgate.net/profile/Qais-Alqaissi",
+    href: socials.researchgate,
+  },
 ];
 
 export function Contact() {
@@ -16,11 +21,7 @@ export function Contact() {
     <section id="contact" className="scroll-mt-24 px-6 py-20 sm:px-8">
       <div className="mx-auto w-full max-w-5xl">
         <Reveal>
-          <SectionHeading
-            index="07"
-            title="Contact"
-            description="For roles, collaborations, or project inquiries."
-          />
+          <SectionHeading index="07" title="Contact" description={profile.availability} />
         </Reveal>
 
         <dl className="mt-4 divide-y divide-border">

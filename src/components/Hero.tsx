@@ -17,6 +17,9 @@ export function Hero() {
         <p className="hero-in hero-in-4 mt-6 max-w-2xl text-[16px] leading-8 text-foreground/85">
           {profile.pitch}
         </p>
+        <p className="hero-in hero-in-4 mt-3 max-w-2xl text-[14px] leading-7 text-muted">
+          {profile.availability}
+        </p>
 
         <div
           id="hero-links"
