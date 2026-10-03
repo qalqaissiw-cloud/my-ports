@@ -32,6 +32,7 @@ function PhotoFrame({ photo }: { photo: Photograph }) {
 }
 
 export function Photography() {
+  const [expanded, setExpanded] = useState(0);
   const [active, setActive] = useState<number | null>(null);
   const [outgoing, setOutgoing] = useState<number | null>(null);
   const [motion, setMotion] = useState<Motion>("open");
@@ -111,34 +112,39 @@ export function Photography() {
           ))}
         </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2">
-          {photographs.map((photo, index) => (
-            <Reveal
-              key={photo.src}
-              delayMs={Math.min(index * 40, 160)}
-              className={index === 0 ? "sm:col-span-2" : ""}
-            >
-              <figure>
+        <Reveal className="mt-12">
+          <div className="photo-strips">
+            {photographs.map((photo, index) => {
+              const isOpen = index === expanded;
+              return (
                 <button
+                  key={photo.src}
                   type="button"
-                  onClick={() => openAt(index)}
-                  className="group block w-full cursor-pointer text-left"
+                  className="photo-strip"
+                  data-open={isOpen || undefined}
+                  onPointerEnter={(event) => {
+                    if (event.pointerType === "mouse") setExpanded(index);
+                  }}
+                  onFocus={(event) => {
+                    if (event.currentTarget.matches(":focus-visible")) setExpanded(index);
+                  }}
+                  onClick={() => (isOpen ? openAt(index) : setExpanded(index))}
                   aria-label={`Open ${photo.caption}`}
+                  aria-expanded={isOpen}
                 >
                   <Image
                     src={photo.src}
                     alt={photo.alt}
-                    width={photo.width}
-                    height={photo.height}
-                    sizes={index === 0 ? "100vw" : "(min-width: 640px) 50vw, 100vw"}
-                    className="h-auto w-full bg-card object-cover transition-opacity duration-300 group-hover:opacity-90"
+                    fill
+                    sizes="(min-width: 1024px) 720px, 80vw"
+                    className="object-cover"
                   />
+                  <span className="photo-strip-caption">{photo.caption}</span>
                 </button>
-                <figcaption className="section-label mt-3">{photo.caption}</figcaption>
-              </figure>
-            </Reveal>
-          ))}
-        </div>
+              );
+            })}
+          </div>
+        </Reveal>
       </div>
 
       {current ? (
