@@ -1,10 +1,38 @@
 "use client";
 
-import { useEffect, useState, type CSSProperties } from "react";
-import { navItems, profile } from "../lib/content";
-import { CloseIcon, MenuIcon } from "./icons";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
+import { cv, navItems, profile, socials } from "../lib/content";
+import { ArrowRightIcon, CloseIcon, GitHubIcon, LinkedInIcon, MailIcon, MenuIcon } from "./icons";
 
 const HEADER_OFFSET = 64;
+const sectionIds = navItems.map((item) => item.href.slice(1));
+
+function useActiveSection(ids: readonly string[]) {
+  const [active, setActive] = useState<string | null>(null);
+
+  useEffect(() => {
+    const update = () => {
+      const line = window.innerHeight * 0.35;
+      let current: string | null = null;
+      for (const id of ids) {
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top <= line) current = id;
+      }
+      setActive(current);
+    };
+
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+
+    return () => {
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+    };
+  }, [ids]);
+
+  return active;
+}
 
 function useScrolledPast(id: string) {
   const [past, setPast] = useState(false);
@@ -47,11 +75,39 @@ export function Header() {
   const [ready, setReady] = useState(false);
   const showName = useScrolledPast("hero-name");
   const showHeroLinks = useScrolledPast("hero-links");
+  const activeSection = useActiveSection(sectionIds);
+  const toggleRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const frame = requestAnimationFrame(() => setReady(true));
     return () => cancelAnimationFrame(frame);
   }, []);
+
+  useEffect(() => {
+    if (!open) return;
+
+    const root = document.documentElement;
+    const previousOverflow = root.style.overflow;
+    root.style.overflow = "hidden";
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+        toggleRef.current?.focus();
+      }
+    };
+    const desktop = window.matchMedia("(min-width: 1024px)");
+    const onBreakpoint = () => desktop.matches && setOpen(false);
+
+    window.addEventListener("keydown", onKeyDown);
+    desktop.addEventListener("change", onBreakpoint);
+
+    return () => {
+      root.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", onKeyDown);
+      desktop.removeEventListener("change", onBreakpoint);
+    };
+  }, [open]);
 
   const deferredItems = navItems.filter(isDeferred);
 
@@ -60,7 +116,7 @@ export function Header() {
       <div className="mx-auto flex h-16 w-full max-w-5xl items-center justify-between px-6 sm:px-8">
         <div className="flex min-w-0 items-center">
           <span
-            className={`nav-reveal nav-reveal-name ${showName ? "is-open" : ""} ${ready ? "is-ready" : ""}`}
+            className={`nav-reveal nav-reveal-name ${showName || open ? "is-open" : ""} ${ready ? "is-ready" : ""}`}
           >
             <span className="nav-reveal-inner">
               <a
@@ -112,6 +168,7 @@ export function Header() {
         </nav>
 
         <button
+          ref={toggleRef}
           type="button"
           className="inline-flex p-1 text-foreground transition-transform duration-200 lg:hidden"
           aria-expanded={open}
@@ -123,41 +180,70 @@ export function Header() {
         </button>
       </div>
 
-      {open ? (
-        <nav id="mobile-nav" className="menu-in border-t border-border px-6 py-4 lg:hidden">
-          <div className="flex flex-col text-[14px]">
-            {navItems.map((item) => {
-              const deferred = isDeferred(item);
-              const stagger = deferred
-                ? deferredItems.findIndex((entry) => entry.href === item.href)
-                : -1;
-              const link = (
-                <a
-                  href={item.href}
-                  className="block py-2 text-muted transition-colors duration-200 hover:text-foreground"
-                  onClick={() => setOpen(false)}
-                >
-                  {item.label}
-                </a>
-              );
-
-              if (!deferred) {
-                return <div key={item.href}>{link}</div>;
-              }
-
-              return (
-                <div
+      <div id="mobile-nav" className="mobile-menu lg:hidden" data-open={open} inert={!open}>
+        <div className="mx-auto flex min-h-full w-full max-w-5xl flex-col px-6 pb-8 pt-4 sm:px-8">
+          <nav aria-label="Sections">
+            <ol className="mobile-menu-list">
+              {navItems.map((item, index) => (
+                <li
                   key={item.href}
-                  className={`nav-reveal-row ${showHeroLinks ? "is-open" : ""} ${ready ? "is-ready" : ""}`}
-                  style={{ "--nav-delay": `${stagger * 70}ms` } as CSSProperties}
+                  className="mobile-menu-item"
+                  style={{ "--i": index } as CSSProperties}
                 >
-                  <div className="nav-reveal-row-inner">{link}</div>
-                </div>
-              );
-            })}
+                  <a
+                    href={item.href}
+                    className="mobile-menu-link"
+                    aria-current={activeSection === item.href.slice(1) ? "location" : undefined}
+                    onClick={() => setOpen(false)}
+                  >
+                    <span className="mobile-menu-index">{String(index + 1).padStart(2, "0")}</span>
+                    <span className="mobile-menu-label">{item.label}</span>
+                    <ArrowRightIcon className="mobile-menu-arrow" />
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </nav>
+
+          <div
+            className="mobile-menu-item mt-auto pt-8"
+            style={{ "--i": navItems.length } as CSSProperties}
+          >
+            <p className="section-label">Get in touch</p>
+            <a
+              href={cv.href}
+              download={cv.filename}
+              className="mt-4 flex h-12 items-center justify-center rounded-full bg-accent text-[14px] font-medium text-background transition-opacity hover:opacity-90"
+            >
+              {cv.label}
+            </a>
+            <div className="mt-3 grid grid-cols-3 gap-3 text-[13px] text-foreground">
+              <a href={`mailto:${profile.email}`} className="mobile-menu-social">
+                <MailIcon className="h-4 w-4" />
+                Email
+              </a>
+              <a
+                href={socials.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mobile-menu-social"
+              >
+                <LinkedInIcon className="h-4 w-4" />
+                LinkedIn
+              </a>
+              <a
+                href={socials.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mobile-menu-social"
+              >
+                <GitHubIcon className="h-4 w-4" />
+                GitHub
+              </a>
+            </div>
           </div>
-        </nav>
-      ) : null}
+        </div>
+      </div>
     </header>
   );
 }

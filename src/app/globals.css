@@ -212,41 +212,126 @@ body {
   transition-delay: calc(var(--nav-delay, 0ms) + 420ms);
 }
 
-.nav-reveal-row {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 0.42s cubic-bezier(0.22, 1, 0.36, 1);
-  transition-delay: var(--nav-delay, 0ms);
+.nav-reveal:not(.is-ready),
+.nav-reveal:not(.is-ready) a {
+  transition: none;
 }
 
-.nav-reveal-row.is-open {
-  grid-template-rows: 1fr;
-}
-
-.nav-reveal-row-inner {
-  min-height: 0;
-  overflow: hidden;
-}
-
-.nav-reveal-row a {
+.mobile-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  height: calc(100dvh - 4rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: var(--background);
   opacity: 0;
-  transform: translateY(4px);
+  visibility: hidden;
+  transform: translateY(-8px);
   transition:
-    opacity 0.26s ease,
-    transform 0.26s ease;
+    opacity 0.28s ease,
+    transform 0.28s ease,
+    visibility 0s linear 0.28s;
 }
 
-.nav-reveal-row.is-open a {
+.mobile-menu[data-open="true"] {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition:
+    opacity 0.28s ease,
+    transform 0.28s ease,
+    visibility 0s;
+}
+
+.mobile-menu-item {
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 0.35s ease,
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.mobile-menu[data-open="true"] .mobile-menu-item {
   opacity: 1;
   transform: none;
-  transition-delay: calc(var(--nav-delay, 0ms) + 240ms);
+  transition-delay: calc(var(--i, 0) * 40ms + 60ms);
 }
 
-.nav-reveal:not(.is-ready),
-.nav-reveal:not(.is-ready) a,
-.nav-reveal-row:not(.is-ready),
-.nav-reveal-row:not(.is-ready) a {
-  transition: none;
+.mobile-menu-link {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.mobile-menu-index {
+  width: 1.5rem;
+  color: var(--muted);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.18em;
+  transition: color 0.2s ease;
+}
+
+.mobile-menu-label {
+  flex: 1;
+  color: var(--foreground);
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  transition: color 0.2s ease;
+}
+
+.mobile-menu-list:has([aria-current]) .mobile-menu-label {
+  color: color-mix(in srgb, var(--foreground) 55%, transparent);
+}
+
+.mobile-menu-list .mobile-menu-link[aria-current] .mobile-menu-label,
+.mobile-menu-list .mobile-menu-link:hover .mobile-menu-label {
+  color: var(--foreground);
+}
+
+.mobile-menu-link[aria-current] .mobile-menu-index {
+  color: var(--accent);
+}
+
+.mobile-menu-arrow {
+  align-self: center;
+  width: 1.125rem;
+  height: 1.125rem;
+  color: var(--muted);
+  opacity: 0;
+  transform: translateX(-6px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.25s ease;
+}
+
+.mobile-menu-link:hover .mobile-menu-arrow,
+.mobile-menu-link:focus-visible .mobile-menu-arrow,
+.mobile-menu-link[aria-current] .mobile-menu-arrow {
+  opacity: 1;
+  transform: none;
+}
+
+.mobile-menu-social {
+  display: flex;
+  height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--card);
+  transition: border-color 0.2s ease;
+}
+
+.mobile-menu-social:hover {
+  border-color: color-mix(in srgb, var(--foreground) 30%, var(--border));
 }
 
 .link-line {
@@ -823,21 +908,6 @@ body {
   }
 }
 
-.menu-in {
-  animation: menu-in 0.22s ease;
-}
-
-@keyframes menu-in {
-  from {
-    opacity: 0;
-    transform: translateY(-6px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -846,11 +916,9 @@ body {
   .reveal,
   .reveal.is-visible,
   .hero-in,
-  .menu-in,
   .nav-reveal,
   .nav-reveal a,
-  .nav-reveal-row,
-  .nav-reveal-row a,
+  .mobile-menu-item,
   .photo-lightbox,
   .photo-lightbox-slide,
   .paint-stroke,
@@ -865,6 +933,8 @@ body {
   .hero-badge a,
   .hero-badge-tip,
   .company-mark,
+  .mobile-menu,
+  .mobile-menu-arrow,
   .photo-strip,
   .photo-strip img,
   .photo-strip-caption,

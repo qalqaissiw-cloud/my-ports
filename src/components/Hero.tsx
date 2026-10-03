@@ -3,7 +3,7 @@ import { badges, cv, profile, socials } from "../lib/content";
 
 export function Hero() {
   return (
-    <section className="px-6 py-24 sm:px-8 sm:py-32">
+    <section className="overflow-x-clip px-6 py-24 sm:px-8 sm:py-32">
       <div className="mx-auto w-full max-w-5xl">
         <p className="hero-in hero-in-1 section-label">Amman, Jordan</p>
         <h1
