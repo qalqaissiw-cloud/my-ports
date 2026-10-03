@@ -147,7 +147,7 @@ export const experience: ExperienceRole[] = [
 
 export type Project = {
   name: string;
-  category: "Open source" | "Internal" | "Client" | "Studio";
+  category: "Open source" | "Personal" | "Internal" | "Client" | "Studio";
   description: string;
   tags: string[];
   href?: string;
@@ -164,6 +164,20 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  {
+    name: "The Zero Day",
+    category: "Personal",
+    description:
+      "Live cybersecurity news and vulnerability-intelligence platform. Pulls 32 news outlets, research teams, government CERTs and vendor advisories every 15 minutes, groups coverage of the same story, links articles to the CVEs they discuss, and ranks each CVE's patch priority from NVD, CISA KEV, EPSS and public exploit data — plus spike alerts and fact-checked AI briefings.",
+    tags: ["Django", "React", "TypeScript", "PostgreSQL", "Threat intel", "Vercel"],
+    href: "https://thezeroday.vercel.app/",
+    hrefLabel: "Visit site",
+    stats: "32 sources · refreshed every 15 min",
+    cover: {
+      brand: "#0c0c0c",
+      image: { src: "/projects/the-zero-day.png", width: 1500, height: 500 },
+    },
+  },
   {
     name: "Caeruleum",
     category: "Open source",
