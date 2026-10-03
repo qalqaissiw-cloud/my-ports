@@ -140,8 +140,7 @@ export type Project = {
   links?: { href: string; label: string }[];
   stats?: string;
   cover: {
-    background: string;
-    image?: string;
+    image?: { src: string; width: number; height: number };
     logo?: string;
     logoShape?: "square" | "wide";
     mark?: string;
@@ -158,7 +157,7 @@ export const projects: Project[] = [
     href: "https://github.com/Cipher-Red/Caeruleum",
     hrefLabel: "View on GitHub",
     stats: "92 clones · 55 unique cloners",
-    cover: { background: "#02060c", image: "/projects/caeruleum.png" },
+    cover: { image: { src: "/projects/caeruleum.png", width: 600, height: 200 } },
   },
   {
     name: "Vigil",
@@ -169,7 +168,7 @@ export const projects: Project[] = [
     href: "https://github.com/Cipher-Red/Vigil",
     hrefLabel: "View on GitHub",
     stats: "85 clones · 59 unique cloners",
-    cover: { background: "#1a2130", image: "/projects/vigil.png" },
+    cover: { image: { src: "/projects/vigil.png", width: 1576, height: 518 } },
   },
   {
     name: "Aurum",
@@ -180,10 +179,7 @@ export const projects: Project[] = [
     href: "https://github.com/Cipher-Red/Aurum",
     hrefLabel: "View on GitHub",
     stats: "93 clones · 58 unique cloners",
-    cover: {
-      background: "linear-gradient(120deg, #0a0703 0%, #4d3a10 55%, #c8951c 100%)",
-      mark: "Au",
-    },
+    cover: { mark: "Au" },
   },
   {
     name: "FAST",
@@ -199,7 +195,7 @@ export const projects: Project[] = [
         label: "Product guide",
       },
     ],
-    cover: { background: "#006098", mark: "FAST" },
+    cover: { mark: "FAST" },
   },
   {
     name: "Detroit Axle QA",
@@ -207,7 +203,7 @@ export const projects: Project[] = [
     description:
       "Internal QA web app with multi-factor authentication, role-aware access, and hardened controls — a secure workspace for review workflows without exposing sensitive operations.",
     tags: ["MFA", "Security hardening", "React", "QA"],
-    cover: { background: "#183558", logo: "/logos/detroit-axle-alt.svg", logoShape: "wide" },
+    cover: { logo: "/logos/detroit-axle-alt.svg", logoShape: "wide" },
   },
   {
     name: "Weavers",
@@ -217,7 +213,7 @@ export const projects: Project[] = [
     tags: ["Full-stack", "Web", "SMB", "Jordan"],
     href: "https://weavers-jo.netlify.app/",
     hrefLabel: "Visit site",
-    cover: { background: "#060607", logo: "/logos/weavers.svg" },
+    cover: { mark: "Weavers" },
   },
   {
     name: "Adawat / Qbits Solutions",
@@ -227,7 +223,7 @@ export const projects: Project[] = [
     tags: ["Full-stack", "B2B", "B2C", "React", "PostgreSQL"],
     href: "https://adawat.net",
     hrefLabel: "Visit Adawat",
-    cover: { background: "#ff9200", logo: "/logos/adawat.svg" },
+    cover: { logo: "/logos/adawat.svg" },
   },
   {
     name: "One Piece Restaurant",
@@ -235,7 +231,7 @@ export const projects: Project[] = [
     description:
       "Full-featured restaurant website designed and developed for One Piece, a restaurant based in Jordan.",
     tags: ["Full-stack", "Web", "Client work"],
-    cover: { background: "#7a1f1a", mark: "OP" },
+    cover: { mark: "OP" },
   },
 ];
 

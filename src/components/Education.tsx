@@ -34,6 +34,7 @@ function CertificateFrame({
 }
 
 export function Education() {
+  const [side, setSide] = useState(0);
   const [active, setActive] = useState<number | null>(null);
   const [outgoing, setOutgoing] = useState<number | null>(null);
   const [motion, setMotion] = useState<Motion>("open");
@@ -116,24 +117,42 @@ export function Education() {
                   Graduated {education.graduated} · GPA {education.gpa} · {education.rating}
                 </p>
 
-                <div className="mt-8 grid gap-6 sm:grid-cols-2">
-                  {certificates.map((certificate, index) => (
-                    <figure key={certificate.src}>
+                <div className="cert-flip mt-8">
+                  <div className="cert-toggle" role="group" aria-label="Certificate language">
+                    {certificates.map((certificate, index) => (
                       <button
+                        key={certificate.label}
                         type="button"
-                        onClick={() => openAt(index)}
-                        className="group block w-full cursor-pointer text-left"
-                        aria-label={`Open ${certificate.label} certificate`}
+                        onClick={() => setSide(index)}
+                        aria-pressed={side === index}
                       >
-                        <p className="mb-3 text-[13px] text-muted">{certificate.label}</p>
-                        <img
-                          src={certificate.src}
-                          alt={certificate.alt}
-                          className="w-full border border-border object-contain transition-[border-color,opacity] duration-300 group-hover:border-foreground/30 group-hover:opacity-90"
-                        />
+                        {certificate.label}
                       </button>
-                    </figure>
-                  ))}
+                    ))}
+                  </div>
+                  <div className="cert-flip-inner" data-flipped={side === 1 || undefined}>
+                    {certificates.map((certificate, index) => (
+                      <figure
+                        key={certificate.src}
+                        className={`cert-face ${index === 1 ? "cert-face-back" : ""}`}
+                        inert={side !== index}
+                      >
+                        <button
+                          type="button"
+                          onClick={() => openAt(index)}
+                          className="block w-full cursor-zoom-in"
+                          aria-label={`Open ${certificate.label} certificate`}
+                        >
+                          <img
+                            src={certificate.src}
+                            alt={certificate.alt}
+                            draggable={false}
+                            className="w-full border border-border bg-card object-contain"
+                          />
+                        </button>
+                      </figure>
+                    ))}
+                  </div>
                 </div>
               </div>
             </article>

@@ -7,14 +7,16 @@ function ProjectCover({ project, index }: { project: Project; index: number }) {
   const { cover } = project;
 
   return (
-    <div className="project-cover" style={{ background: cover.background }}>
+    <div className="project-cover">
       {cover.image ? (
         <Image
-          src={cover.image}
+          src={cover.image.src}
           alt=""
-          fill
+          width={cover.image.width}
+          height={cover.image.height}
           sizes="(min-width: 1024px) 330px, (min-width: 640px) 50vw, 100vw"
-          className="object-cover"
+          quality={90}
+          className="project-banner"
         />
       ) : null}
       {cover.logo ? (
@@ -22,7 +24,11 @@ function ProjectCover({ project, index }: { project: Project; index: number }) {
           <Image src={cover.logo} alt="" fill unoptimized className="object-contain" />
         </span>
       ) : null}
-      {cover.mark ? <span className="project-mark">{cover.mark}</span> : null}
+      {cover.mark ? (
+        <span className="project-mark" data-long={cover.mark.length > 4 || undefined}>
+          {cover.mark}
+        </span>
+      ) : null}
       <div className="project-cover-meta">
         <span className="text-[12px] tracking-[0.16em]">{String(index + 1).padStart(2, "0")}</span>
         <span className="text-2xl font-medium tracking-tight">{project.name}</span>

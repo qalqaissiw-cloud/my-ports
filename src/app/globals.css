@@ -197,7 +197,11 @@ body {
   flex-direction: column;
   overflow: hidden;
   border: 1px solid var(--border);
-  background: var(--card);
+  transition: border-color 0.3s ease;
+}
+
+.project-card:hover {
+  border-color: rgba(22, 22, 22, 0.22);
 }
 
 .project-cover {
@@ -208,7 +212,9 @@ body {
   height: var(--band);
   place-items: center;
   overflow: hidden;
-  color: #fff;
+  isolation: isolate;
+  background: var(--accent);
+  color: var(--background);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 2.5rem 100%, 0 calc(100% - 2.5rem));
   transition:
     height 0.6s cubic-bezier(0.22, 1, 0.36, 1),
@@ -222,6 +228,24 @@ body {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent 45%);
   opacity: 0;
   transition: opacity 0.3s ease;
+}
+
+.project-banner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: auto;
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 82%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 82%, transparent);
+}
+
+.project-banner {
+  filter: grayscale(1);
+  mix-blend-mode: lighten;
+}
+
+.project-logo {
+  mix-blend-mode: luminosity;
 }
 
 .project-logo {
@@ -245,6 +269,10 @@ body {
   letter-spacing: -0.04em;
   line-height: 1;
   transition: font-size 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-mark[data-long] {
+  font-size: 2.25rem;
 }
 
 .project-cover-meta {
@@ -296,10 +324,88 @@ body {
     font-size: 5.5rem;
   }
 
+  .project-card:not(:hover, :focus-within) .project-mark[data-long] {
+    font-size: 3.5rem;
+  }
+
   .project-card:not(:hover, :focus-within) .project-body {
     opacity: 0;
     transform: translateY(8px);
     transition-delay: 0s;
+  }
+}
+
+.cert-flip {
+  position: relative;
+  max-width: 26rem;
+  perspective: 1600px;
+}
+
+.cert-flip-inner {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.cert-flip-inner[data-flipped] {
+  transform: rotateY(180deg);
+}
+
+.cert-face {
+  backface-visibility: hidden;
+}
+
+.cert-face-back {
+  position: absolute;
+  inset: 0;
+  transform: rotateY(180deg);
+}
+
+.cert-toggle {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 2;
+  display: flex;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  border-radius: 999px;
+  background: rgba(22, 22, 22, 0.82);
+  backdrop-filter: blur(6px);
+  transform: translate(-50%, -50%);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.cert-toggle button {
+  cursor: pointer;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.cert-toggle button:hover,
+.cert-toggle button:focus-visible {
+  color: #fff;
+}
+
+.cert-toggle button[aria-pressed="true"] {
+  background: #fff;
+  color: var(--foreground);
+}
+
+@media (hover: hover) {
+  .cert-flip:not(:hover, :focus-within) .cert-toggle {
+    opacity: 0;
+    transform: translate(-50%, calc(-50% + 6px));
+    pointer-events: none;
   }
 }
 
@@ -597,7 +703,9 @@ body {
   .project-logo,
   .project-mark,
   .project-cover-meta,
-  .project-body {
+  .project-body,
+  .cert-flip-inner,
+  .cert-toggle {
     transition: none;
   }
 }
