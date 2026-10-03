@@ -296,6 +296,7 @@ export const skillGroups = [
     title: "Scripting & platforms",
     items: [
       "PowerShell",
+      "CMD / Batch",
       "Bash",
       "Full-stack web",
       "Internal tooling",
@@ -303,6 +304,10 @@ export const skillGroups = [
       "GitLab",
       "Production & development workflows",
     ],
+  },
+  {
+    title: "Operating systems",
+    items: ["Windows", "Linux (Kali, Fedora)"],
   },
   {
     title: "Languages",
