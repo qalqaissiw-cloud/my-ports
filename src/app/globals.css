@@ -20,7 +20,35 @@
 }
 
 html {
+  background: var(--background);
   scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  border: 3px solid var(--background);
+  border-radius: 999px;
+  background: #d4d1c9;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a9a59c;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  html {
+    scrollbar-color: #d4d1c9 var(--background);
+    scrollbar-width: thin;
+  }
 }
 
 body {
