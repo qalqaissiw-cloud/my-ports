@@ -69,6 +69,56 @@ body {
 .hero-in-3 { animation-delay: 0.28s; }
 .hero-in-4 { animation-delay: 0.4s; }
 .hero-in-5 { animation-delay: 0.52s; }
+.hero-in-6 { animation-delay: 0.64s; }
+
+.hero-badge {
+  position: relative;
+}
+
+.hero-badge a {
+  display: block;
+  border-radius: 10px;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero-badge a:hover,
+.hero-badge a:focus-visible {
+  transform: translateY(-3px) scale(1.06);
+}
+
+.hero-badge a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.hero-badge-tip {
+  position: absolute;
+  top: calc(100% + 0.6rem);
+  left: 50%;
+  z-index: 10;
+  width: max-content;
+  max-width: 15rem;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card);
+  box-shadow: 0 10px 24px -12px rgba(22, 22, 22, 0.3);
+  font-size: 12px;
+  line-height: 1.35;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -4px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.hero-badge:hover .hero-badge-tip,
+.hero-badge:focus-within .hero-badge-tip {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
 
 @keyframes rise-in {
   to {
@@ -747,6 +797,8 @@ body {
     transition: none;
   }
 
+  .hero-badge a,
+  .hero-badge-tip,
   .photo-strip,
   .photo-strip img,
   .photo-strip-caption,
