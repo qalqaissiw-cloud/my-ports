@@ -1,5 +1,6 @@
 import { experience } from "../lib/content";
 import { BrandPaint } from "./BrandPaint";
+import { CompanyMark } from "./CompanyMark";
 import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
 
@@ -13,26 +14,32 @@ export function Experience() {
 
         <ol className="mt-12 divide-y divide-border">
           {experience.map((role, index) => (
-            <li key={`${role.company}-${role.role}`} className="bg-background py-10 first:pt-2">
+            <li
+              key={`${role.company}-${role.role}`}
+              className="experience-role bg-background py-10 first:pt-2"
+            >
               <Reveal delayMs={Math.min(index * 60, 180)}>
                 <div className="grid gap-3 sm:grid-cols-[1fr_auto] sm:items-baseline">
-                  <div>
-                    <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-                      {role.href ? (
-                        <a
-                          href={role.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="link-line text-lg font-medium tracking-tight"
-                        >
-                          {role.company}
-                        </a>
-                      ) : (
-                        <h3 className="text-lg font-medium tracking-tight">{role.company}</h3>
-                      )}
-                      <BrandPaint colors={role.colors} label={role.company} />
+                  <div className="flex items-start gap-4">
+                    <CompanyMark logo={role.logo} />
+                    <div className="min-w-0">
+                      <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+                        {role.href ? (
+                          <a
+                            href={role.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="link-line text-lg font-medium tracking-tight"
+                          >
+                            {role.company}
+                          </a>
+                        ) : (
+                          <h3 className="text-lg font-medium tracking-tight">{role.company}</h3>
+                        )}
+                        <BrandPaint colors={role.colors} label={role.company} />
+                      </div>
+                      <p className="mt-1 text-[15px] text-muted">{role.role}</p>
                     </div>
-                    <p className="mt-1 text-[15px] text-muted">{role.role}</p>
                   </div>
                   <p className="section-label sm:text-right">
                     {role.period}

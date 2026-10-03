@@ -237,6 +237,32 @@ body {
   color: var(--foreground);
 }
 
+.company-mark {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card);
+  color: color-mix(in srgb, var(--foreground) 72%, transparent);
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.company-mark svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.experience-role:hover .company-mark,
+.experience-role:focus-within .company-mark {
+  border-color: color-mix(in srgb, var(--brand) 35%, var(--border));
+  color: var(--brand);
+}
+
 .paint-stroke {
   clip-path: inset(0 100% 0 0);
 }
@@ -810,6 +836,7 @@ body {
 
   .hero-badge a,
   .hero-badge-tip,
+  .company-mark,
   .photo-strip,
   .photo-strip img,
   .photo-strip-caption,

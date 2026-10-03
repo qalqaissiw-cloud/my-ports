@@ -40,8 +40,17 @@ export const navItems = [
   { href: "#contact", label: "Contact", after: "hero-links" },
 ] as const;
 
+export type CompanyLogo =
+  | "detroit-axle"
+  | "ncsc"
+  | "fibertechjo"
+  | "amazon"
+  | "qbits"
+  | "weavers";
+
 export type ExperienceRole = {
   company: string;
+  logo: CompanyLogo;
   role: string;
   period: string;
   current?: boolean;
@@ -53,6 +62,7 @@ export type ExperienceRole = {
 export const experience: ExperienceRole[] = [
   {
     company: "Detroit Axle",
+    logo: "detroit-axle",
     role: "R&D — Acting Team Lead (previously Solutions Development)",
     period: "Mar 2026 — Present",
     current: true,
@@ -73,6 +83,7 @@ export const experience: ExperienceRole[] = [
   },
   {
     company: "National Cyber Security Center Jordan (NCSCJO)",
+    logo: "ncsc",
     role: "Cybersecurity Intern",
     period: "Feb 2025 — Present",
     current: true,
@@ -85,6 +96,7 @@ export const experience: ExperienceRole[] = [
   },
   {
     company: "FiberTechJo",
+    logo: "fibertechjo",
     role: "Customer Support Intern",
     period: "Dec 2024 — Present",
     current: true,
@@ -97,6 +109,7 @@ export const experience: ExperienceRole[] = [
   },
   {
     company: "Amazon UK",
+    logo: "amazon",
     role: "Customer Support Associate",
     period: "Aug 2023 — Jan 2024",
     href: "https://www.amazon.co.uk",
@@ -108,6 +121,7 @@ export const experience: ExperienceRole[] = [
   },
   {
     company: "Qbits",
+    logo: "qbits",
     role: "Freelance Full-Stack Developer",
     period: "Ongoing",
     current: true,
@@ -119,6 +133,7 @@ export const experience: ExperienceRole[] = [
   },
   {
     company: "Self-Employed",
+    logo: "weavers",
     role: "Freelance Full-Stack Developer",
     period: "Ongoing",
     current: true,
