@@ -22,37 +22,9 @@ export function Hero() {
           {profile.availability}
         </p>
 
-        <div className="hero-in hero-in-5 relative z-10 mt-10">
-          <p className="section-label">Verified credentials</p>
-          <ul className="mt-4 flex flex-wrap items-center gap-3 sm:gap-4">
-            {badges.map((badge) => (
-              <li key={badge.href} className="hero-badge">
-                <a
-                  href={badge.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`${badge.name}, ${badge.issuer}. Verify on Credly`}
-                >
-                  <Image
-                    src={badge.image}
-                    alt=""
-                    width={128}
-                    height={128}
-                    className="h-14 w-14 object-contain sm:h-16 sm:w-16"
-                  />
-                </a>
-                <span className="hero-badge-tip" aria-hidden>
-                  <span className="block text-foreground">{badge.name}</span>
-                  <span className="mt-0.5 block text-muted">{badge.issuer} · Verify on Credly</span>
-                </span>
-              </li>
-            ))}
-          </ul>
-        </div>
-
         <div
           id="hero-links"
-          className="hero-in hero-in-6 mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-[14px]"
+          className="hero-in hero-in-5 mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-[14px]"
         >
           <a href="#projects" className="link-line pb-0.5 text-foreground">
             Selected work
@@ -82,6 +54,39 @@ export function Hero() {
           >
             GitHub
           </a>
+        </div>
+
+        <div className="hero-in hero-in-6 relative z-10 mt-12">
+          <p className="section-label">Verified credentials</p>
+          <ul className="mt-4 flex flex-wrap items-center gap-3 sm:gap-4">
+            {badges.map((badge) => {
+              const external = !badge.href.startsWith("#");
+              const cta = badge.cta ?? "Verify on Credly";
+              return (
+                <li key={badge.href} className="hero-badge">
+                  <a
+                    href={badge.href}
+                    {...(external && { target: "_blank", rel: "noopener noreferrer" })}
+                    aria-label={`${badge.name}, ${badge.issuer}. ${cta}`}
+                  >
+                    <Image
+                      src={badge.image}
+                      alt=""
+                      width={128}
+                      height={128}
+                      className="h-14 w-14 object-contain sm:h-16 sm:w-16"
+                    />
+                  </a>
+                  <span className="hero-badge-tip" aria-hidden>
+                    <span className="block text-foreground">{badge.name}</span>
+                    <span className="mt-0.5 block text-muted">
+                      {badge.issuer} · {cta}
+                    </span>
+                  </span>
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </div>
     </section>

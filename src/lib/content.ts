@@ -281,7 +281,22 @@ export const skillGroups = [
   },
 ] as const;
 
-export const badges = [
+export type Badge = {
+  name: string;
+  issuer: string;
+  href: string;
+  image: string;
+  cta?: string;
+};
+
+export const badges: Badge[] = [
+  {
+    name: "BS in Cyber Security",
+    issuer: "Amman Arab University",
+    href: "#education",
+    image: "/badges/amman-arab-university.png",
+    cta: "View degree",
+  },
   {
     name: "Certified in Cybersecurity (CC)",
     issuer: "ISC2",
@@ -318,7 +333,7 @@ export const badges = [
     href: "https://www.credly.com/badges/0f72e0b2-f10c-4f5f-9b98-6789cebab5ff/public_url",
     image: "/badges/cisco-intro-cyber.png",
   },
-] as const;
+];
 
 export const certifications = [
   "Blue Team Junior Analyst (BTJA) — Security Blue Team",

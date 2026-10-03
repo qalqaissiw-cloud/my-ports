@@ -120,6 +120,17 @@ body {
   transform: translate(-50%, 0);
 }
 
+.hero-badge:first-child .hero-badge-tip {
+  left: 0;
+  text-align: left;
+  transform: translateY(-4px);
+}
+
+.hero-badge:first-child:hover .hero-badge-tip,
+.hero-badge:first-child:focus-within .hero-badge-tip {
+  transform: none;
+}
+
 @keyframes rise-in {
   to {
     opacity: 1;
