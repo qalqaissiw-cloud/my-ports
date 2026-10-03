@@ -1,5 +1,5 @@
 import { profile, socials } from "../lib/content";
-import { GitHubIcon, LinkedInIcon } from "./icons";
+import { GitHubIcon, LinkedInIcon, MailIcon } from "./icons";
 
 export function Footer() {
   return (
@@ -8,32 +8,35 @@ export function Footer() {
         <p>
           © {new Date().getFullYear()} {profile.name}
         </p>
-        <div className="flex items-center gap-6">
-          <a href={`mailto:${profile.email}`} className="link-line">
-            Email
+        <div className="flex items-center gap-4">
+          <a
+            href={`mailto:${profile.email}`}
+            aria-label="Email"
+            title={profile.email}
+            className="transition-colors duration-200 hover:text-foreground"
+          >
+            <MailIcon className="h-[19px] w-[19px]" />
           </a>
-          <span className="flex items-center gap-4">
-            <a
-              href={socials.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              title="LinkedIn"
-              className="transition-colors duration-200 hover:text-foreground"
-            >
-              <LinkedInIcon className="h-4 w-4" />
-            </a>
-            <a
-              href={socials.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub"
-              title="GitHub"
-              className="transition-colors duration-200 hover:text-foreground"
-            >
-              <GitHubIcon className="h-[18px] w-[18px]" />
-            </a>
-          </span>
+          <a
+            href={socials.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            title="LinkedIn"
+            className="transition-colors duration-200 hover:text-foreground"
+          >
+            <LinkedInIcon className="h-4 w-4" />
+          </a>
+          <a
+            href={socials.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            title="GitHub"
+            className="transition-colors duration-200 hover:text-foreground"
+          >
+            <GitHubIcon className="h-[18px] w-[18px]" />
+          </a>
         </div>
       </div>
     </footer>
