@@ -60,8 +60,9 @@ export const experience: ExperienceRole[] = [
     colors: ["#006098", "#38b0e0", "#183558"],
     highlights: [
       "Joined as a Solutions Developer in R&D and was promoted to Acting Team Lead.",
-      "Audited FedEx carrier billing across ~5 million rows, identifying discrepancies that saved $20K+ per week.",
-      "Led development of FAST, an internal cross-departmental platform used company-wide for time tracking, support workflows, sales visibility, and more.",
+      "Led development of FAST, an internal cross-departmental platform used company-wide for time tracking, support workflows, sales visibility, carrier-bill auditing, and more.",
+      "Within FAST, built automated FedEx billing audits across ~5 million rows — saving $20K+ per week and emailing the relevant departments for action.",
+      "Extended FAST with Amazon shipping-bill auditing and email workflows that recovered ~$1K in credit backs each week.",
       "Spent 45 days in Shanghai auditing Logistics and building tools to audit shipping containers, improving operational flow and efficiency.",
       "Collaborated with third-party IT vendors to integrate and support internal systems.",
       "Partnered with the listing team to develop and translate product listings for expansion into Mexico.",
@@ -138,6 +139,13 @@ export type Project = {
   hrefLabel?: string;
   links?: { href: string; label: string }[];
   stats?: string;
+  cover: {
+    background: string;
+    image?: string;
+    logo?: string;
+    logoShape?: "square" | "wide";
+    mark?: string;
+  };
 };
 
 export const projects: Project[] = [
@@ -150,6 +158,7 @@ export const projects: Project[] = [
     href: "https://github.com/Cipher-Red/Caeruleum",
     hrefLabel: "View on GitHub",
     stats: "92 clones · 55 unique cloners",
+    cover: { background: "#02060c", image: "/projects/caeruleum.png" },
   },
   {
     name: "Vigil",
@@ -160,6 +169,7 @@ export const projects: Project[] = [
     href: "https://github.com/Cipher-Red/Vigil",
     hrefLabel: "View on GitHub",
     stats: "85 clones · 59 unique cloners",
+    cover: { background: "#1a2130", image: "/projects/vigil.png" },
   },
   {
     name: "Aurum",
@@ -170,12 +180,16 @@ export const projects: Project[] = [
     href: "https://github.com/Cipher-Red/Aurum",
     hrefLabel: "View on GitHub",
     stats: "93 clones · 58 unique cloners",
+    cover: {
+      background: "linear-gradient(120deg, #0a0703 0%, #4d3a10 55%, #c8951c 100%)",
+      mark: "Au",
+    },
   },
   {
     name: "FAST",
     category: "Internal",
     description:
-      "Internal, cross-departmental platform used company-wide at Detroit Axle. Covers break/time tracking, customer support workflows, sales visibility, and a scam-flagging feature built on Braintree transaction data.",
+      "Internal, cross-departmental platform used company-wide at Detroit Axle. Covers break/time tracking, customer support workflows, sales visibility, automated FedEx and Amazon shipping-bill audits with department email alerts, and scam-flagging built on Braintree transaction data.",
     tags: ["React", "PostgreSQL", "Python", "Braintree", "GitLab", "Operations"],
     href: "https://fast.detroitaxle.com/login?next=/",
     hrefLabel: "Visit FAST",
@@ -185,6 +199,7 @@ export const projects: Project[] = [
         label: "Product guide",
       },
     ],
+    cover: { background: "#006098", mark: "FAST" },
   },
   {
     name: "Detroit Axle QA",
@@ -192,6 +207,7 @@ export const projects: Project[] = [
     description:
       "Internal QA web app with multi-factor authentication, role-aware access, and hardened controls — a secure workspace for review workflows without exposing sensitive operations.",
     tags: ["MFA", "Security hardening", "React", "QA"],
+    cover: { background: "#183558", logo: "/logos/detroit-axle-alt.svg", logoShape: "wide" },
   },
   {
     name: "Weavers",
@@ -201,6 +217,7 @@ export const projects: Project[] = [
     tags: ["Full-stack", "Web", "SMB", "Jordan"],
     href: "https://weavers-jo.netlify.app/",
     hrefLabel: "Visit site",
+    cover: { background: "#060607", logo: "/logos/weavers.svg" },
   },
   {
     name: "Adawat / Qbits Solutions",
@@ -210,6 +227,7 @@ export const projects: Project[] = [
     tags: ["Full-stack", "B2B", "B2C", "React", "PostgreSQL"],
     href: "https://adawat.net",
     hrefLabel: "Visit Adawat",
+    cover: { background: "#ff9200", logo: "/logos/adawat.svg" },
   },
   {
     name: "One Piece Restaurant",
@@ -217,6 +235,7 @@ export const projects: Project[] = [
     description:
       "Full-featured restaurant website designed and developed for One Piece, a restaurant based in Jordan.",
     tags: ["Full-stack", "Web", "Client work"],
+    cover: { background: "#7a1f1a", mark: "OP" },
   },
 ];
 

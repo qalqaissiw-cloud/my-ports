@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="ADAWAT">
+  <rect width="64" height="64" fill="#FF9200"/>
+  <path
+    fill="#FFFFFF"
+    fill-rule="evenodd"
+    d="M32 14 L48 50 H40.5 L37.2 41.5 H26.8 L23.5 50 H16 Z
+       M28.4 35.5 H35.6 L32 26 Z"
+  />
+</svg>
