@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { CSSProperties } from "react";
 import { projects, type Project } from "../lib/content";
 import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
@@ -7,7 +8,7 @@ function ProjectCover({ project, index }: { project: Project; index: number }) {
   const { cover } = project;
 
   return (
-    <div className="project-cover">
+    <div className="project-cover" style={{ "--brand": cover.brand } as CSSProperties}>
       {cover.image ? (
         <Image
           src={cover.image.src}

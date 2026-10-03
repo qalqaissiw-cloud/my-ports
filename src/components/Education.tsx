@@ -118,15 +118,22 @@ export function Education() {
                 </p>
 
                 <div className="cert-flip mt-8">
-                  <div className="cert-toggle" role="group" aria-label="Certificate language">
+                  <div
+                    className="cert-toggle"
+                    role="group"
+                    aria-label="Certificate language"
+                    data-side={side}
+                  >
                     {certificates.map((certificate, index) => (
                       <button
                         key={certificate.label}
                         type="button"
+                        lang={certificate.lang}
                         onClick={() => setSide(index)}
                         aria-pressed={side === index}
+                        aria-label={`${certificate.label} certificate`}
                       >
-                        {certificate.label}
+                        {certificate.nativeLabel}
                       </button>
                     ))}
                   </div>

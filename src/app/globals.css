@@ -221,6 +221,19 @@ body {
     clip-path 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+.project-cover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--brand);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.project-card:is(:hover, :focus-within) .project-cover::before {
+  opacity: 1;
+}
+
 .project-cover::after {
   content: "";
   position: absolute;
@@ -242,10 +255,20 @@ body {
 .project-banner {
   filter: grayscale(1);
   mix-blend-mode: lighten;
+  transition: filter 0.5s ease;
 }
 
 .project-logo {
   mix-blend-mode: luminosity;
+}
+
+.project-card:is(:hover, :focus-within) .project-banner {
+  filter: none;
+  mix-blend-mode: normal;
+}
+
+.project-card:is(:hover, :focus-within) .project-logo {
+  mix-blend-mode: normal;
 }
 
 .project-logo {
@@ -366,39 +389,68 @@ body {
   top: 0;
   left: 50%;
   z-index: 2;
-  display: flex;
-  gap: 0.25rem;
-  padding: 0.25rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 4px;
+  border: 1px solid var(--border);
   border-radius: 999px;
-  background: rgba(22, 22, 22, 0.82);
-  backdrop-filter: blur(6px);
+  background: var(--card);
+  box-shadow:
+    0 1px 2px rgba(22, 22, 22, 0.06),
+    0 10px 24px -12px rgba(22, 22, 22, 0.35);
   transform: translate(-50%, -50%);
   transition:
     opacity 0.25s ease,
     transform 0.25s ease;
 }
 
-.cert-toggle button {
-  cursor: pointer;
-  padding: 0.35rem 0.9rem;
+.cert-toggle::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+  width: calc(50% - 4px);
   border-radius: 999px;
-  font-size: 0.72rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease;
+  background: var(--accent);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.cert-toggle button:hover,
+.cert-toggle[data-side="1"]::before {
+  transform: translateX(100%);
+}
+
+.cert-toggle button {
+  position: relative;
+  z-index: 1;
+  min-width: 6rem;
+  cursor: pointer;
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--muted);
+  transition: color 0.25s ease;
+}
+
+.cert-toggle button[lang="ar"] {
+  font-family: "Noto Sans Arabic", "Segoe UI", Tahoma, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.cert-toggle button:hover {
+  color: var(--foreground);
+}
+
 .cert-toggle button:focus-visible {
-  color: #fff;
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 .cert-toggle button[aria-pressed="true"] {
-  background: #fff;
-  color: var(--foreground);
+  color: #fff;
 }
 
 @media (hover: hover) {
@@ -699,13 +751,16 @@ body {
   .photo-strip img,
   .photo-strip-caption,
   .project-cover,
+  .project-cover::before,
   .project-cover::after,
+  .project-banner,
   .project-logo,
   .project-mark,
   .project-cover-meta,
   .project-body,
   .cert-flip-inner,
-  .cert-toggle {
+  .cert-toggle,
+  .cert-toggle::before {
     transition: none;
   }
 }
