@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { badges, cv, profile, socials } from "../lib/content";
-import { GitHubIcon } from "./icons";
+import { GitHubIcon, LinkedInIcon } from "./icons";
 
 export function Hero() {
   return (
@@ -39,24 +39,28 @@ export function Hero() {
           <a href={cv.href} download={cv.filename} className="link-line text-muted">
             {cv.label}
           </a>
-          <a
-            href={socials.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="link-line text-muted"
-          >
-            LinkedIn
-          </a>
-          <a
-            href={socials.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-            title="GitHub"
-            className="text-muted transition-colors duration-200 hover:text-foreground"
-          >
-            <GitHubIcon className="h-5 w-5" />
-          </a>
+          <span className="flex items-center gap-5">
+            <a
+              href={socials.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              title="LinkedIn"
+              className="text-muted transition-colors duration-200 hover:text-foreground"
+            >
+              <LinkedInIcon className="h-[18px] w-[18px]" />
+            </a>
+            <a
+              href={socials.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              title="GitHub"
+              className="text-muted transition-colors duration-200 hover:text-foreground"
+            >
+              <GitHubIcon className="h-5 w-5" />
+            </a>
+          </span>
         </div>
 
         <div className="hero-in hero-in-6 relative z-10 mt-12">

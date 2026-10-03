@@ -1,5 +1,5 @@
 import { profile, socials } from "../lib/content";
-import { GitHubIcon } from "./icons";
+import { GitHubIcon, LinkedInIcon } from "./icons";
 
 export function Footer() {
   return (
@@ -12,19 +12,28 @@ export function Footer() {
           <a href={`mailto:${profile.email}`} className="link-line">
             Email
           </a>
-          <a href={socials.linkedin} target="_blank" rel="noopener noreferrer" className="link-line">
-            LinkedIn
-          </a>
-          <a
-            href={socials.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-            title="GitHub"
-            className="transition-colors duration-200 hover:text-foreground"
-          >
-            <GitHubIcon className="h-[18px] w-[18px]" />
-          </a>
+          <span className="flex items-center gap-4">
+            <a
+              href={socials.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              title="LinkedIn"
+              className="transition-colors duration-200 hover:text-foreground"
+            >
+              <LinkedInIcon className="h-4 w-4" />
+            </a>
+            <a
+              href={socials.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              title="GitHub"
+              className="transition-colors duration-200 hover:text-foreground"
+            >
+              <GitHubIcon className="h-[18px] w-[18px]" />
+            </a>
+          </span>
         </div>
       </div>
     </footer>
