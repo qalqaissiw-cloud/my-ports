@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { badges, cv, profile, socials } from "../lib/content";
+import { GitHubIcon } from "./icons";
 
 export function Hero() {
   return (
@@ -50,9 +51,11 @@ export function Hero() {
             href={socials.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="link-line text-muted"
+            aria-label="GitHub"
+            title="GitHub"
+            className="text-muted transition-colors duration-200 hover:text-foreground"
           >
-            GitHub
+            <GitHubIcon className="h-5 w-5" />
           </a>
         </div>
 

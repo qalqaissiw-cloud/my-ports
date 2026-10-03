@@ -1,4 +1,5 @@
 import { profile, socials } from "../lib/content";
+import { GitHubIcon } from "./icons";
 
 export function Footer() {
   return (
@@ -7,15 +8,22 @@ export function Footer() {
         <p>
           © {new Date().getFullYear()} {profile.name}
         </p>
-        <div className="flex gap-6">
+        <div className="flex items-center gap-6">
           <a href={`mailto:${profile.email}`} className="link-line">
             Email
           </a>
           <a href={socials.linkedin} target="_blank" rel="noopener noreferrer" className="link-line">
             LinkedIn
           </a>
-          <a href={socials.github} target="_blank" rel="noopener noreferrer" className="link-line">
-            GitHub
+          <a
+            href={socials.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            title="GitHub"
+            className="transition-colors duration-200 hover:text-foreground"
+          >
+            <GitHubIcon className="h-[18px] w-[18px]" />
           </a>
         </div>
       </div>
