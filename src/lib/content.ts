@@ -83,6 +83,19 @@ export const experience: ExperienceRole[] = [
     ],
   },
   {
+    company: "Qbits",
+    logo: "qbits",
+    role: "Full-Stack Developer",
+    period: "Jul 2026 - Present",
+    current: true,
+    href: "https://www.qbit-it.com/",
+    colors: ["#7ec8e8", "#ffffff", "#c8eaf5"],
+    highlights: [
+      "Full-stack developer on a small development team building web platforms for clients in Jordan.",
+      "Designed and developed a B2C, B2B, and internal management platform for Adawat, a Jordan-based company.",
+    ],
+  },
+  {
     company: "National Cyber Security Center Jordan (NCSCJO)",
     logo: "ncsc",
     role: "Cybersecurity Intern",
@@ -118,18 +131,6 @@ export const experience: ExperienceRole[] = [
     highlights: [
       "Delivered customer service in a high-pressure environment.",
       "Navigated complex systems to resolve customer needs.",
-    ],
-  },
-  {
-    company: "Qbits",
-    logo: "qbits",
-    role: "Freelance Full-Stack Developer",
-    period: "Ongoing",
-    current: true,
-    href: "https://www.qbit-it.com/",
-    colors: ["#7ec8e8", "#ffffff", "#c8eaf5"],
-    highlights: [
-      "Designed and developed a B2C, B2B, and internal management platform for Adawat, a Jordan-based company.",
     ],
   },
   {
