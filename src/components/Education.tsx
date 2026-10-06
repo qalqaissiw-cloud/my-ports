@@ -101,7 +101,7 @@ export function Education() {
     <section id="education" className="scroll-mt-24 px-6 py-20 sm:px-8">
       <div className="mx-auto w-full max-w-5xl">
         <Reveal>
-          <SectionHeading index="06" title="Education & publications" />
+          <SectionHeading index="07" title="Education & publications" />
         </Reveal>
 
         <div className="mt-4 divide-y divide-border">

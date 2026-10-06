@@ -1,4 +1,4 @@
-import { certifications, memberships, skillGroups } from "../lib/content";
+import { memberships, skillGroups } from "../lib/content";
 import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
 
@@ -21,17 +21,6 @@ export function Skills() {
           ))}
 
           <Reveal delayMs={180}>
-            <div className="grid gap-4 py-8 sm:grid-cols-[180px_1fr]">
-              <h3 className="section-label pt-1">Also certified</h3>
-              <ul className="space-y-2 text-[15px] leading-7 text-foreground/85">
-                {certifications.map((cert) => (
-                  <li key={cert}>{cert}</li>
-                ))}
-              </ul>
-            </div>
-          </Reveal>
-
-          <Reveal delayMs={240}>
             <div className="grid gap-4 py-8 sm:grid-cols-[180px_1fr]">
               <h3 className="section-label pt-1">Memberships</h3>
               <p className="text-[15px] leading-8 text-foreground/85">

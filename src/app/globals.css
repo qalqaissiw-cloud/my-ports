@@ -743,6 +743,178 @@ body {
   }
 }
 
+.cert-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.cert-card-featured {
+  height: 100%;
+  padding: 0.75rem 0.75rem 1.1rem;
+  border: 1px solid var(--border);
+  background: var(--card);
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.4s ease,
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.cert-card-featured:hover,
+.cert-card-featured:focus-within {
+  border-color: rgba(22, 22, 22, 0.22);
+  box-shadow: 0 22px 40px -28px rgba(22, 22, 22, 0.45);
+  transform: translateY(-3px);
+}
+
+.cert-card-featured .cert-thumb {
+  border-color: transparent;
+}
+
+.cert-thumb {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  cursor: zoom-in;
+  border: 1px solid var(--border);
+  background:
+    radial-gradient(120% 90% at 50% 0%, #ffffff 0%, transparent 70%),
+    linear-gradient(180deg, #f3f1ec, #e9e6df);
+  transition: border-color 0.3s ease;
+}
+
+.cert-thumb:hover {
+  border-color: rgba(22, 22, 22, 0.22);
+}
+
+.cert-thumb:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.cert-thumb-layer {
+  position: absolute;
+  inset: 12% 11%;
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.cert-thumb-layer img {
+  filter: drop-shadow(0 6px 12px rgba(22, 22, 22, 0.16));
+}
+
+.cert-thumb-layer[data-depth="1"] {
+  transform: translate(-3%, 2%) rotate(-3deg) scale(0.97);
+}
+
+.cert-thumb-layer[data-depth="2"] {
+  transform: translate(3%, -2%) rotate(3.5deg) scale(0.94);
+}
+
+.cert-thumb-layer[data-depth="1"] img,
+.cert-thumb-layer[data-depth="2"] img {
+  filter: drop-shadow(0 4px 10px rgba(22, 22, 22, 0.12)) brightness(0.97);
+}
+
+.cert-card:is(:hover, :focus-within) .cert-thumb-layer[data-depth="0"] {
+  transform: translateY(-3%) scale(1.04);
+}
+
+.cert-card:is(:hover, :focus-within) .cert-thumb-layer[data-depth="1"] {
+  transform: translate(-9%, 3%) rotate(-7deg) scale(0.95);
+}
+
+.cert-card:is(:hover, :focus-within) .cert-thumb-layer[data-depth="2"] {
+  transform: translate(9%, -1%) rotate(7deg) scale(0.92);
+}
+
+.cert-thumb-count {
+  position: absolute;
+  right: 0.6rem;
+  bottom: 0.6rem;
+  z-index: 1;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+}
+
+.cert-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.cert-filters button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  cursor: pointer;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.2;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.cert-filters button:hover {
+  border-color: color-mix(in srgb, var(--foreground) 30%, var(--border));
+  color: var(--foreground);
+}
+
+.cert-filters button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.cert-filters button[aria-pressed="true"] {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+
+.cert-filter-count {
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.6;
+}
+
+.cert-card-enter {
+  animation: rise-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(var(--i, 0) * 45ms);
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.cert-more {
+  cursor: pointer;
+  padding: 0.7rem 1.4rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--card);
+  font-size: 14px;
+  transition: border-color 0.2s ease;
+}
+
+.cert-more:hover {
+  border-color: color-mix(in srgb, var(--foreground) 30%, var(--border));
+}
+
+.cert-more:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
 .photo-strips {
   display: flex;
   height: clamp(320px, 62vh, 560px);
@@ -1003,6 +1175,7 @@ body {
   .mobile-menu-item,
   .photo-lightbox,
   .photo-lightbox-slide,
+  .cert-card-enter,
   .paint-stroke,
   .reveal.is-visible .paint-stroke {
     animation: none;
@@ -1033,7 +1206,10 @@ body {
   .project-body,
   .cert-flip-inner,
   .cert-toggle,
-  .cert-toggle::before {
+  .cert-toggle::before,
+  .cert-card-featured,
+  .cert-thumb-layer,
+  .cert-filters button {
     transition: none;
   }
 }

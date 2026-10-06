@@ -36,6 +36,7 @@ export const navItems = [
   { href: "#projects", label: "Projects", after: "hero-links" },
   { href: "#photography", label: "Photography", after: "hero-links" },
   { href: "#skills", label: "Skills" },
+  { href: "#certifications", label: "Certifications" },
   { href: "#education", label: "Education" },
   { href: "#contact", label: "Contact", after: "hero-links" },
 ] as const;
@@ -369,14 +370,340 @@ export const badges: Badge[] = [
   },
 ];
 
-export const certifications = [
-  "Blue Team Junior Analyst (BTJA) — Security Blue Team",
-  "Cybrary Offensive Security Operations",
-  "Splunk Fundamentals 1",
-  "Cybrary OSINT",
-  "Microsoft Certificate in Networking and Cloud Computing",
-  "Introduction to Critical Infrastructure Protection (CIP)",
+export const certificationCategories = [
+  "Security",
+  "Cloud & IT",
+  "Data & dev",
+  "Business & more",
 ] as const;
+
+export type CertificationCategory = (typeof certificationCategories)[number];
+
+export type CertificationPage = {
+  src: string;
+  width: number;
+  height: number;
+  label?: string;
+};
+
+export type Certification = {
+  name: string;
+  issuer: string;
+  date: string;
+  sortDate: string;
+  category: CertificationCategory;
+  featured?: boolean;
+  note?: string;
+  verify?: string;
+  pages: CertificationPage[];
+};
+
+const certPage = (slug: string, width: number, height: number, label?: string): CertificationPage => ({
+  src: `/certifications/${slug}.webp`,
+  width,
+  height,
+  label,
+});
+
+export const certificationList: Certification[] = [
+  {
+    name: "Certified in Cybersecurity (CC)",
+    issuer: "ISC2",
+    date: "Nov 2024",
+    sortDate: "2024-11-17",
+    category: "Security",
+    featured: true,
+    note: "All five domains plus the final assessment",
+    verify: "https://www.credly.com/badges/728b9a3a-cfd9-477a-9bda-229ad00b4704/public_url",
+    pages: [
+      certPage("isc2-cc", 1800, 1356, "Certified in Cybersecurity"),
+      certPage("isc2-cc-domain-1", 1800, 1356, "Domain 1 · Security Principles"),
+      certPage("isc2-cc-domain-2", 1800, 1356, "Domain 2 · Incident Response, BC & DR"),
+      certPage("isc2-cc-domain-3", 1800, 1356, "Domain 3 · Access Control Concepts"),
+      certPage("isc2-cc-domain-4", 1800, 1356, "Domain 4 · Network Security"),
+      certPage("isc2-cc-domain-5", 1800, 1356, "Domain 5 · Security Operations"),
+      certPage("isc2-cc-final-assessment", 1800, 1356, "Course conclusion & final assessment"),
+    ],
+  },
+  {
+    name: "Fortinet Certified Fundamentals in Cybersecurity",
+    issuer: "Fortinet",
+    date: "Jan 2025",
+    sortDate: "2025-01-20",
+    category: "Security",
+    featured: true,
+    note: "Valid until Jan 2027",
+    verify: "https://www.credly.com/badges/083f90eb-7432-47bc-92a6-7c3d48f667ef/public_url",
+    pages: [
+      certPage("fortinet-fcf", 1800, 1273, "FCF in Cybersecurity"),
+      certPage("fortinet-getting-started", 1800, 1310, "Getting Started in Cybersecurity 2.0"),
+      certPage("fortinet-threat-landscape", 1800, 1310, "Introduction to the Threat Landscape 2.0"),
+    ],
+  },
+  {
+    name: "Blue Team Junior Analyst (BTJA) Pathway",
+    issuer: "Security Blue Team",
+    date: "Jan 2025",
+    sortDate: "2025-01-12",
+    category: "Security",
+    featured: true,
+    note: "OSINT, forensics, vulnerability management, dark web, threat hunting, network analysis",
+    pages: [
+      certPage("sbt-btja", 1800, 1273, "Pathway bundle"),
+      certPage("sbt-osint", 1800, 1273, "Introduction to OSINT"),
+      certPage("sbt-digital-forensics", 1800, 1273, "Introduction to Digital Forensics"),
+      certPage("sbt-vulnerability-management", 1800, 1273, "Introduction to Vulnerability Management"),
+      certPage("sbt-dark-web-operations", 1800, 1273, "Introduction to Dark Web Operations"),
+      certPage("sbt-threat-hunting", 1800, 1273, "Introduction to Threat Hunting"),
+      certPage("sbt-network-analysis", 1800, 1273, "Introduction to Network Analysis"),
+    ],
+  },
+  {
+    name: "Cyber Warriors CTF Training",
+    issuer: "National Cyber Security Center of Jordan",
+    date: "2024",
+    sortDate: "2024-08-01",
+    category: "Security",
+    featured: true,
+    note: "40 hours over 8 days",
+    pages: [certPage("ncsc-cyber-warriors", 1800, 1391)],
+  },
+  {
+    name: "Introduction to Cybersecurity",
+    issuer: "Cisco Networking Academy",
+    date: "Oct 2025",
+    sortDate: "2025-10-19",
+    category: "Security",
+    verify: "https://www.credly.com/badges/0f72e0b2-f10c-4f5f-9b98-6789cebab5ff/public_url",
+    pages: [certPage("cisco-intro-cybersecurity", 1800, 1220)],
+  },
+  {
+    name: "Business Analysis Foundations",
+    issuer: "LinkedIn Learning · IIBA",
+    date: "Oct 2025",
+    sortDate: "2025-10-26",
+    category: "Business & more",
+    pages: [certPage("linkedin-business-analysis", 1800, 1391)],
+  },
+  {
+    name: "Psychological Research, Obedience and Ethics",
+    issuer: "The Open University",
+    date: "Jun 2025",
+    sortDate: "2025-06-21",
+    category: "Business & more",
+    pages: [certPage("openlearn-psychological-research", 1800, 2546)],
+  },
+  {
+    name: "Making Sense of Ourselves",
+    issuer: "The Open University",
+    date: "Jun 2025",
+    sortDate: "2025-06-20",
+    category: "Business & more",
+    pages: [certPage("openlearn-making-sense-of-ourselves", 1800, 2546)],
+  },
+  {
+    name: "OSINT",
+    issuer: "Cybrary",
+    date: "Mar 2025",
+    sortDate: "2025-03-01T19:00",
+    category: "Security",
+    pages: [certPage("cybrary-osint", 1800, 1273)],
+  },
+  {
+    name: "Reconnaissance and Enumeration Basics",
+    issuer: "Cybrary",
+    date: "Mar 2025",
+    sortDate: "2025-03-01T04:00",
+    category: "Security",
+    pages: [certPage("cybrary-recon-enumeration", 1800, 1273)],
+  },
+  {
+    name: "Cyber Kill Chains",
+    issuer: "Cybrary",
+    date: "Feb 2025",
+    sortDate: "2025-02-28T18:10",
+    category: "Security",
+    pages: [certPage("cybrary-cyber-kill-chains", 1800, 1273)],
+  },
+  {
+    name: "Log Analysis Basics",
+    issuer: "Cybrary",
+    date: "Feb 2025",
+    sortDate: "2025-02-28T18:07",
+    category: "Security",
+    pages: [certPage("cybrary-log-analysis-basics", 1800, 1273)],
+  },
+  {
+    name: "Offensive Security Operations",
+    issuer: "Cybrary",
+    date: "Feb 2025",
+    sortDate: "2025-02-27",
+    category: "Security",
+    pages: [certPage("cybrary-offensive-security-operations", 1800, 1273)],
+  },
+  {
+    name: "Using Fields",
+    issuer: "Splunk",
+    date: "Feb 2025",
+    sortDate: "2025-02-21",
+    category: "Data & dev",
+    pages: [certPage("splunk-using-fields", 1800, 1272)],
+  },
+  {
+    name: "Intro to Splunk",
+    issuer: "Splunk",
+    date: "Feb 2025",
+    sortDate: "2025-02-20",
+    category: "Data & dev",
+    pages: [certPage("splunk-intro", 1800, 1272)],
+  },
+  {
+    name: "Networking Academy Learn-A-Thon 2025",
+    issuer: "Cisco Networking Academy",
+    date: "Jan 2025",
+    sortDate: "2025-01-31",
+    category: "Cloud & IT",
+    note: "Recognition for exceptional learning achievement",
+    verify: "https://www.credly.com/badges/dba5e0a8-a9a0-42f1-b89f-10a96c8ed3b3/public_url",
+    pages: [certPage("cisco-learnathon-2025", 1800, 1220)],
+  },
+  {
+    name: "Cybersecurity for Businesses — The Fundamental Edition",
+    issuer: "EC-Council",
+    date: "Dec 2024",
+    sortDate: "2024-12-23",
+    category: "Security",
+    pages: [certPage("ec-council-cybersecurity-for-businesses", 1800, 1389)],
+  },
+  {
+    name: "Introduction to PowerShell",
+    issuer: "Security Blue Team",
+    date: "Nov 2024",
+    sortDate: "2024-11-01",
+    category: "Security",
+    pages: [certPage("sbt-powershell", 1800, 1273)],
+  },
+  {
+    name: "A Practical Introduction to Cloud Computing",
+    issuer: "EC-Council",
+    date: "Oct 2024",
+    sortDate: "2024-10-28",
+    category: "Cloud & IT",
+    pages: [certPage("ec-council-cloud-computing", 1800, 1389)],
+  },
+  {
+    name: "Introduction to Critical Infrastructure Protection (ICIP)",
+    issuer: "OPSWAT Academy",
+    date: "Oct 2024",
+    sortDate: "2024-10-09",
+    category: "Security",
+    pages: [certPage("opswat-icip", 900, 723)],
+  },
+  {
+    name: "Introduction to Networking and Cloud Computing",
+    issuer: "Microsoft · Coursera",
+    date: "Aug 2024",
+    sortDate: "2024-08-25",
+    category: "Cloud & IT",
+    verify: "https://coursera.org/verify/B6S9PJK172ZP",
+    pages: [certPage("microsoft-networking-cloud", 1800, 1391)],
+  },
+  {
+    name: "PLC and Classic Control Workshop",
+    issuer: "The Hope International Company",
+    date: "Aug 2024",
+    sortDate: "2024-08-20",
+    category: "Business & more",
+    pages: [certPage("hope-plc-classic-control", 1800, 1273)],
+  },
+  {
+    name: "PMP & Digital Marketing Event",
+    issuer: "The Hope International Company",
+    date: "Jul 2024",
+    sortDate: "2024-07-29",
+    category: "Business & more",
+    pages: [certPage("hope-pmp-digital-marketing", 1800, 1273)],
+  },
+  {
+    name: "Introduction to Data Analysis Using Microsoft Excel",
+    issuer: "Coursera Project Network",
+    date: "Jul 2024",
+    sortDate: "2024-07-15",
+    category: "Data & dev",
+    verify: "https://coursera.org/verify/DKND5T2GLTNQ",
+    pages: [certPage("coursera-excel-data-analysis", 1800, 1391)],
+  },
+  {
+    name: "Investment Risk Management",
+    issuer: "Coursera Project Network",
+    date: "Jul 2024",
+    sortDate: "2024-07-09",
+    category: "Business & more",
+    verify: "https://coursera.org/verify/T2JK6E2KBRF7",
+    pages: [certPage("coursera-investment-risk", 1800, 1391)],
+  },
+  {
+    name: "AI in Business",
+    issuer: "Amman Arab University",
+    date: "Spring 2024",
+    sortDate: "2024-04-01",
+    category: "Business & more",
+    note: "6 training hours",
+    pages: [certPage("aau-ai-in-business", 1800, 1273)],
+  },
+  {
+    name: "Exploring the Metaverse",
+    issuer: "Amman Arab University",
+    date: "Spring 2024",
+    sortDate: "2024-03-31",
+    category: "Business & more",
+    note: "3 training hours",
+    pages: [certPage("aau-metaverse", 1800, 1273)],
+  },
+  {
+    name: "Crafting the Cybersecurity Roadmap of Tomorrow",
+    issuer: "Digital Excel Training & Consultancy",
+    date: "Mar 2024",
+    sortDate: "2024-03-08",
+    category: "Security",
+    pages: [certPage("digital-excel-cybersecurity-roadmap", 1800, 1300)],
+  },
+  {
+    name: "Introduction to Computers and Operating Systems and Security",
+    issuer: "Microsoft · Coursera",
+    date: "Jan 2024",
+    sortDate: "2024-01-21",
+    category: "Cloud & IT",
+    verify: "https://coursera.org/verify/NJEEK3U2V6RA",
+    pages: [certPage("microsoft-computers-os-security", 1800, 1391)],
+  },
+  {
+    name: "Front End Development — HTML",
+    issuer: "Great Learning Academy",
+    date: "Jun 2023",
+    sortDate: "2023-06-01",
+    category: "Data & dev",
+    verify: "https://verify.mygreatlearning.com/MPWGUKNU",
+    pages: [certPage("great-learning-html", 1800, 1272)],
+  },
+  {
+    name: "Cyber Security Fundamentals",
+    issuer: "The Hope International Company",
+    date: "Apr 2023",
+    sortDate: "2023-04-09",
+    category: "Security",
+    note: "40 hours",
+    pages: [certPage("hope-cyber-security-fundamentals", 1800, 1273)],
+  },
+  {
+    name: "SQL (Basic)",
+    issuer: "HackerRank",
+    date: "Jan 2023",
+    sortDate: "2023-01-16",
+    category: "Data & dev",
+    pages: [certPage("hackerrank-sql-basic", 1600, 1200)],
+  },
+];
 
 export const memberships = ["IEEE Member"] as const;
 
