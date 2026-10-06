@@ -135,7 +135,7 @@ export const experience: ExperienceRole[] = [
     company: "Self-Employed",
     logo: "weavers",
     role: "Freelance Full-Stack Developer",
-    period: "Ongoing",
+    period: "Dec 2025 - Present",
     current: true,
     href: "https://weavers-jo.netlify.app/",
     colors: ["#1c2b3a", "#8b8680", "#c4b8a5"],
