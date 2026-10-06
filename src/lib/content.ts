@@ -111,8 +111,7 @@ export const experience: ExperienceRole[] = [
     company: "FiberTechJo",
     logo: "fibertechjo",
     role: "Customer Support Intern",
-    period: "Dec 2024 - Present",
-    current: true,
+    period: "Dec 2024 - Mar 2026",
     href: "https://fibertechjo.com/en/",
     colors: ["#2b2b63", "#d72c38", "#646464"],
     highlights: [
