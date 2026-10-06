@@ -48,7 +48,7 @@ export const metadata: Metadata = {
         url: "/photos/lujiazui.jpg",
         width: 1800,
         height: 1200,
-        alt: "Shanghai skyline — photography by Qais Alqaissi",
+        alt: "Shanghai skyline, photographed by Qais Alqaissi",
       },
     ],
   },

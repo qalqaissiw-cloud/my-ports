@@ -80,7 +80,7 @@ function SlideFrame({ slide, total }: { slide: Slide; total: number }) {
     <>
       <img
         src={page.src}
-        alt={`${cert.name}${page.label ? ` — ${page.label}` : ""}, ${cert.issuer}`}
+        alt={`${cert.name}${page.label ? `, ${page.label}` : ""}, ${cert.issuer}`}
         width={page.width}
         height={page.height}
         draggable={false}

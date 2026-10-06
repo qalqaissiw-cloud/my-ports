@@ -7,11 +7,11 @@ export const profile = {
   phone: "(+962) 0781156087",
   phoneHref: "+9620781156087",
   pitch:
-    "I work at the intersection of cybersecurity, software development, and automation. I identify vulnerabilities, build internal tools used company-wide, and develop open-source security software — from forensic command-line tools to live network monitoring systems. When I’m away from the terminal, I’m usually photographing architecture or exploring somewhere new.",
+    "I work at the intersection of cybersecurity, software development, and automation. I identify vulnerabilities, build internal tools used company-wide, and develop open-source security software, from forensic command-line tools to live network monitoring systems. When I’m away from the terminal, I’m usually photographing architecture or exploring somewhere new.",
   availability:
-    "Open to cybersecurity, R&D, and full-stack roles — remote or based in Amman.",
+    "Open to cybersecurity, R&D, and full-stack roles, remote or based in Amman.",
   summary:
-    "Cybersecurity graduate and R&D professional with hands-on experience spanning solutions development, team leadership, and customer support. Certified by globally recognized organizations, I excel in identifying vulnerabilities, analyzing threats, and securing systems, while also driving process improvement, cost savings, and internal tooling initiatives within industrial R&D environments — including leading a data audit across roughly 5 million FedEx billing records that saved $20K+ per week, and building internal tools used company-wide. I've shipped work through GitHub and GitLab across both development and production environments, delivered freelance full-stack solutions for external clients, and developed open-source security tools such as Caeruleum (forensic analysis) and Vigil (network traffic monitoring). I thrive in high-pressure environments and am committed to digital defense and impactful engineering. Outside of that work I photograph travel and architecture, including a body of work from Shanghai.",
+    "I'm a cybersecurity graduate and R&D Acting Team Lead at Detroit Axle, where I build secure internal tools and automate the audits behind day-to-day operations. I lead development of FAST, a company-wide platform whose automated FedEx billing audits cover roughly 5 million records and save more than $20K per week. At the National Cyber Security Center of Jordan I work on penetration testing and blue-team defense, and I hold ISC2 CC, Fortinet FCF, and Security Blue Team BTJA certifications. Beyond that, I built The Zero Day, a live vulnerability-intelligence platform, maintain the open-source security tools Caeruleum, Vigil, and Aurum, and deliver full-stack systems for clients in Jordan. I also photograph travel and architecture, including a body of work from Shanghai.",
 } as const;
 
 export const socials = {
@@ -64,15 +64,15 @@ export const experience: ExperienceRole[] = [
   {
     company: "Detroit Axle",
     logo: "detroit-axle",
-    role: "R&D — Acting Team Lead (previously Solutions Development)",
-    period: "Mar 2026 — Present",
+    role: "R&D Acting Team Lead (previously Solutions Developer)",
+    period: "Mar 2026 - Present",
     current: true,
     href: "https://www.detroitaxle.com",
     colors: ["#006098", "#38b0e0", "#183558"],
     highlights: [
       "Joined as a Solutions Developer in R&D and was promoted to Acting Team Lead.",
       "Led development of FAST, an internal cross-departmental platform used company-wide for time tracking, support workflows, sales visibility, carrier-bill auditing, and more.",
-      "Within FAST, built automated FedEx billing audits across ~5 million rows — saving $20K+ per week and emailing the relevant departments for action.",
+      "Within FAST, built automated FedEx billing audits across ~5 million rows, saving $20K+ per week and emailing the relevant departments for action.",
       "Extended FAST with Amazon shipping-bill auditing and email workflows that recovered ~$1K in credit backs each week.",
       "Spent 45 days in Shanghai auditing Logistics and building tools to audit shipping containers, improving operational flow and efficiency.",
       "Collaborated with third-party IT vendors to integrate and support internal systems.",
@@ -86,7 +86,7 @@ export const experience: ExperienceRole[] = [
     company: "National Cyber Security Center Jordan (NCSCJO)",
     logo: "ncsc",
     role: "Cybersecurity Intern",
-    period: "Feb 2025 — Present",
+    period: "Feb 2025 - Present",
     current: true,
     href: "https://ncsc.jo",
     colors: ["#ce1126", "#007a3d", "#303840"],
@@ -99,7 +99,7 @@ export const experience: ExperienceRole[] = [
     company: "FiberTechJo",
     logo: "fibertechjo",
     role: "Customer Support Intern",
-    period: "Dec 2024 — Present",
+    period: "Dec 2024 - Present",
     current: true,
     href: "https://fibertechjo.com/en/",
     colors: ["#2b2b63", "#d72c38", "#646464"],
@@ -112,7 +112,7 @@ export const experience: ExperienceRole[] = [
     company: "Amazon UK",
     logo: "amazon",
     role: "Customer Support Associate",
-    period: "Aug 2023 — Jan 2024",
+    period: "Aug 2023 - Jan 2024",
     href: "https://www.amazon.co.uk",
     colors: ["#ff9900", "#232f3e", "#ffffff"],
     highlights: [
@@ -169,7 +169,7 @@ export const projects: Project[] = [
     name: "The Zero Day",
     category: "Personal",
     description:
-      "Live cybersecurity news and vulnerability-intelligence platform. Pulls 32 news outlets, research teams, government CERTs and vendor advisories every 15 minutes, groups coverage of the same story, links articles to the CVEs they discuss, and ranks each CVE's patch priority from NVD, CISA KEV, EPSS and public exploit data — plus spike alerts and fact-checked AI briefings.",
+      "Live cybersecurity news and vulnerability-intelligence platform. Pulls 32 news outlets, research teams, government CERTs and vendor advisories every 15 minutes, groups coverage of the same story, links articles to the CVEs they discuss, and ranks each CVE's patch priority from NVD, CISA KEV, EPSS and public exploit data. It also sends spike alerts and fact-checked AI briefings.",
     tags: ["Django", "React", "TypeScript", "PostgreSQL", "Threat intel", "Vercel"],
     href: "https://thezeroday.org/",
     hrefLabel: "Visit site",
@@ -183,7 +183,7 @@ export const projects: Project[] = [
     name: "Caeruleum",
     category: "Open source",
     description:
-      "A lightweight CLI that simplifies forensic analysis and system operations on low-resource Windows and Linux systems — network scanning, log collection, forensic imaging, malware scanning, file recovery, and disk repair.",
+      "A lightweight CLI that simplifies forensic analysis and system operations on low-resource Windows and Linux systems, covering network scanning, log collection, forensic imaging, malware scanning, file recovery, and disk repair.",
     tags: ["Python", "Forensics", "CLI", "Windows", "Linux"],
     href: "https://github.com/Cipher-Red/Caeruleum",
     hrefLabel: "View on GitHub",
@@ -197,7 +197,7 @@ export const projects: Project[] = [
     name: "Vigil",
     category: "Open source",
     description:
-      "Real-time network traffic monitoring and analysis. Protocol identification, IP/port filtering, DoS/DDoS detection, and PCAP export — tested on live networks, including a 6-hour capture.",
+      "Real-time network traffic monitoring and analysis. Protocol identification, IP/port filtering, DoS/DDoS detection, and PCAP export. Tested on live networks, including a 6-hour capture.",
     tags: ["Python", "Networking", "PCAP", "Detection"],
     href: "https://github.com/Cipher-Red/Vigil",
     hrefLabel: "View on GitHub",
@@ -211,7 +211,7 @@ export const projects: Project[] = [
     name: "Aurum",
     category: "Open source",
     description:
-      "Cross-platform email validation, DNS record checks, and blacklist detection. Bulk validation, custom blacklists, and PDF reports — tested on 500+ emails.",
+      "Cross-platform email validation, DNS record checks, and blacklist detection. Bulk validation, custom blacklists, and PDF reports. Tested on 500+ emails.",
     tags: ["Python", "Email security", "DNS", "Reporting"],
     href: "https://github.com/Cipher-Red/Aurum",
     hrefLabel: "View on GitHub",
@@ -241,7 +241,7 @@ export const projects: Project[] = [
     name: "Detroit Axle QA",
     category: "Internal",
     description:
-      "Internal QA web app with multi-factor authentication, role-aware access, and hardened controls — a secure workspace for review workflows without exposing sensitive operations.",
+      "Internal QA web app with multi-factor authentication, role-aware access, and hardened controls, giving review teams a secure workspace without exposing sensitive operations.",
     tags: ["MFA", "Security hardening", "React", "QA"],
     cover: { brand: "#183558", logo: "/logos/detroit-axle-alt.svg", logoShape: "wide" },
   },
@@ -249,7 +249,7 @@ export const projects: Project[] = [
     name: "Weavers",
     category: "Studio",
     description:
-      "Jordan-based studio building custom web systems for small and medium-sized businesses — design, deployment, automation, and ongoing support.",
+      "Jordan-based studio building custom web systems for small and medium-sized businesses, covering design, deployment, automation, and ongoing support.",
     tags: ["Full-stack", "Web", "SMB", "Jordan"],
     href: "https://weavers-jo.netlify.app/",
     hrefLabel: "Visit site",
@@ -351,7 +351,7 @@ export const badges: Badge[] = [
     image: "/badges/fortinet-getting-started.png",
   },
   {
-    name: "Fortinet Certified Fundamentals — Cybersecurity",
+    name: "Fortinet Certified Fundamentals in Cybersecurity",
     issuer: "Fortinet",
     href: "https://www.credly.com/badges/083f90eb-7432-47bc-92a6-7c3d48f667ef/public_url",
     image: "/badges/fortinet-fundamentals.png",
@@ -568,7 +568,7 @@ export const certificationList: Certification[] = [
     pages: [certPage("cisco-learnathon-2025", 1800, 1220)],
   },
   {
-    name: "Cybersecurity for Businesses — The Fundamental Edition",
+    name: "Cybersecurity for Businesses: The Fundamental Edition",
     issuer: "EC-Council",
     date: "Dec 2024",
     sortDate: "2024-12-23",
@@ -678,7 +678,7 @@ export const certificationList: Certification[] = [
     pages: [certPage("microsoft-computers-os-security", 1800, 1391)],
   },
   {
-    name: "Front End Development — HTML",
+    name: "Front End Development: HTML",
     issuer: "Great Learning Academy",
     date: "Jun 2023",
     sortDate: "2023-06-01",
@@ -719,7 +719,7 @@ export const photography = {
   place: "Shanghai, 2026",
   camera: "Nikon D5300",
   summary:
-    "A selection from 45 days in Shanghai — architecture, night streets, and a few quieter rooms between the work.",
+    "A selection from 45 days in Shanghai, featuring architecture, night streets, and a few quieter rooms between the work.",
 } as const;
 
 export const photographs: Photograph[] = [
@@ -749,14 +749,14 @@ export const education = {
       nativeLabel: "English",
       lang: "en",
       src: "/certificates/bs-cyber-security-en.png",
-      alt: "Bachelor’s degree certificate in Cyber Security — English",
+      alt: "Bachelor’s degree certificate in Cyber Security, English version",
     },
     {
       label: "Arabic",
       nativeLabel: "العربية",
       lang: "ar",
       src: "/certificates/bs-cyber-security-ar.png",
-      alt: "شهادة درجة البكالوريوس في الأمن السيبراني — العربية",
+      alt: "شهادة درجة البكالوريوس في الأمن السيبراني، النسخة العربية",
     },
   ],
 } as const;

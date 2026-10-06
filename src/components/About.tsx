@@ -13,7 +13,7 @@ const highlights = [
     format: "plain" as const,
   },
   { label: "Open-source security tools", end: 3, suffix: "", format: "plain" as const },
-  { label: "US aftermarket parts seller — Detroit Axle", display: "Largest" },
+  { label: "US aftermarket parts seller (Detroit Axle)", display: "Largest" },
   { label: "Internal platform (FAST)", display: "Company-wide" },
 ] as const;
 
