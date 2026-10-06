@@ -11,7 +11,7 @@ export const profile = {
   availability:
     "Open to cybersecurity, R&D, and full-stack roles, remote or based in Amman.",
   summary:
-    "I'm a cybersecurity graduate and R&D Acting Team Lead at Detroit Axle, where I build secure internal tools and automate the audits behind day-to-day operations. I lead development of FAST, a company-wide platform whose automated FedEx billing audits cover roughly 5 million records and save more than $20K per week. At the National Cyber Security Center of Jordan I work on penetration testing and blue-team defense, and I hold ISC2 CC, Fortinet FCF, and Security Blue Team BTJA certifications. Beyond that, I built The Zero Day, a live vulnerability-intelligence platform, maintain the open-source security tools Caeruleum, Vigil, and Aurum, and deliver full-stack systems for clients in Jordan. I also photograph travel and architecture, including a body of work from Shanghai.",
+    "I'm a cybersecurity graduate and R&D Acting Team Lead at Detroit Axle, where I build secure internal tools and automate the audits behind day-to-day operations. I lead development of FAST, a company-wide platform whose automated FedEx billing audits cover roughly 5 million records and save more than $20K per week. At the National Cyber Security Center of Jordan I worked on penetration testing and blue-team defense, and I hold ISC2 CC, Fortinet FCF, and Security Blue Team BTJA certifications. Beyond that, I built The Zero Day, a live vulnerability-intelligence platform, maintain the open-source security tools Caeruleum, Vigil, and Aurum, and deliver full-stack systems for clients in Jordan. I also photograph travel and architecture, including a body of work from Shanghai.",
 } as const;
 
 export const socials = {
@@ -99,8 +99,7 @@ export const experience: ExperienceRole[] = [
     company: "National Cyber Security Center Jordan (NCSCJO)",
     logo: "ncsc",
     role: "Cybersecurity Intern",
-    period: "Feb 2025 - Present",
-    current: true,
+    period: "Feb 2025 - Jun 2025",
     href: "https://ncsc.jo",
     colors: ["#ce1126", "#007a3d", "#303840"],
     highlights: [
