@@ -65,7 +65,7 @@ export const experience: ExperienceRole[] = [
     company: "Detroit Axle",
     logo: "detroit-axle",
     role: "R&D Acting Team Lead (previously Solutions Developer)",
-    period: "Mar 2026 - Present",
+    period: "Mar 2025 - Present",
     current: true,
     href: "https://www.detroitaxle.com",
     colors: ["#006098", "#38b0e0", "#183558"],
@@ -111,7 +111,7 @@ export const experience: ExperienceRole[] = [
     company: "FiberTechJo",
     logo: "fibertechjo",
     role: "Customer Support Intern",
-    period: "Dec 2024 - Mar 2026",
+    period: "Dec 2024 - Mar 2025",
     href: "https://fibertechjo.com/en/",
     colors: ["#2b2b63", "#d72c38", "#646464"],
     highlights: [
