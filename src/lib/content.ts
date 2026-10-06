@@ -170,7 +170,7 @@ export const projects: Project[] = [
     description:
       "Live cybersecurity news and vulnerability-intelligence platform. Pulls 32 news outlets, research teams, government CERTs and vendor advisories every 15 minutes, groups coverage of the same story, links articles to the CVEs they discuss, and ranks each CVE's patch priority from NVD, CISA KEV, EPSS and public exploit data — plus spike alerts and fact-checked AI briefings.",
     tags: ["Django", "React", "TypeScript", "PostgreSQL", "Threat intel", "Vercel"],
-    href: "https://thezeroday.vercel.app/",
+    href: "https://thezeroday.org/",
     hrefLabel: "Visit site",
     stats: "32 sources · refreshed every 15 min",
     cover: {
