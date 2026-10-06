@@ -12,6 +12,7 @@ const highlights = [
     suffix: "K+",
     format: "plain" as const,
   },
+  { label: "Promoted from Solutions Developer", display: "Acting Team Lead" },
   { label: "Open-source security tools", end: 3, suffix: "", format: "plain" as const },
   { label: "US aftermarket parts seller (Detroit Axle)", display: "Largest" },
   { label: "Internal platform (FAST)", display: "Company-wide" },
