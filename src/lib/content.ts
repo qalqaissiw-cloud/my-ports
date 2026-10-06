@@ -96,6 +96,18 @@ export const experience: ExperienceRole[] = [
     ],
   },
   {
+    company: "Self-Employed",
+    logo: "weavers",
+    role: "Freelance Full-Stack Developer",
+    period: "Dec 2025 - Present",
+    current: true,
+    href: "https://weavers-jo.netlify.app/",
+    colors: ["#1c2b3a", "#8b8680", "#c4b8a5"],
+    highlights: [
+      "Designed and developed a full-featured restaurant website for One Piece, a restaurant based in Jordan.",
+    ],
+  },
+  {
     company: "National Cyber Security Center Jordan (NCSCJO)",
     logo: "ncsc",
     role: "Cybersecurity Intern",
@@ -129,18 +141,6 @@ export const experience: ExperienceRole[] = [
     highlights: [
       "Delivered customer service in a high-pressure environment.",
       "Navigated complex systems to resolve customer needs.",
-    ],
-  },
-  {
-    company: "Self-Employed",
-    logo: "weavers",
-    role: "Freelance Full-Stack Developer",
-    period: "Dec 2025 - Present",
-    current: true,
-    href: "https://weavers-jo.netlify.app/",
-    colors: ["#1c2b3a", "#8b8680", "#c4b8a5"],
-    highlights: [
-      "Designed and developed a full-featured restaurant website for One Piece, a restaurant based in Jordan.",
     ],
   },
 ];
