@@ -21,7 +21,7 @@ export const socials = {
 } as const;
 
 export const site = {
-  url: "https://my-ports.netlify.app",
+  url: "https://qalqaissi.netlify.app",
 } as const;
 
 export const cv = {
@@ -74,6 +74,7 @@ export const experience: ExperienceRole[] = [
       "Led development of FAST, an internal cross-departmental platform used company-wide for time tracking, support workflows, sales visibility, carrier-bill auditing, and more.",
       "Within FAST, built automated FedEx billing audits across ~5 million rows, saving $20K+ per week and emailing the relevant departments for action.",
       "Extended FAST with Amazon shipping-bill auditing and email workflows that recovered ~$1K in credit backs each week.",
+      "Owned security and monitoring for FAST and other internal projects, and drove the secure software development lifecycle (SSDLC).",
       "Spent 45 days in Shanghai auditing Logistics and building tools to audit shipping containers, improving operational flow and efficiency.",
       "Collaborated with third-party IT vendors to integrate and support internal systems.",
       "Partnered with the listing team to develop and translate product listings for expansion into Mexico.",
