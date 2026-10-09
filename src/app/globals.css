@@ -242,30 +242,51 @@ body {
 }
 
 .skill-mark {
+  position: relative;
   display: grid;
   place-items: center;
   padding: 0;
   cursor: pointer;
-  width: 2.75rem;
-  height: 2.75rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  overflow: hidden;
   border: 1px solid var(--border);
-  border-radius: 10px;
+  border-radius: 999px;
   background: var(--card);
-  color: var(--brand);
+  color: color-mix(in srgb, var(--foreground) 75%, transparent);
   transition:
-    color 0.3s ease,
-    border-color 0.3s ease;
+    transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+    box-shadow 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.skill-mark::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--brand);
+  transform: translateY(101%);
+  transition: transform 0.3s ease-in-out;
 }
 
 .skill-mark svg {
-  width: 1.45rem;
-  height: 1.45rem;
+  position: relative;
+  width: 1.15rem;
+  height: 1.15rem;
 }
 
 .skill:hover .skill-mark,
 .skill-mark:focus-visible {
-  border-color: color-mix(in srgb, var(--brand) 40%, var(--border));
-  color: var(--brand);
+  border-color: var(--brand);
+  box-shadow: 0 10px 20px -8px color-mix(in srgb, var(--brand) 70%, transparent);
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+.skill:hover .skill-mark::before,
+.skill-mark:focus-visible::before {
+  transform: none;
 }
 
 .skill-mark:focus-visible {
@@ -275,7 +296,7 @@ body {
 
 .skill-tip {
   position: absolute;
-  top: calc(100% + 0.45rem);
+  bottom: calc(100% + 0.6rem);
   left: 50%;
   z-index: 20;
   padding: 0.3rem 0.6rem;
@@ -288,11 +309,11 @@ body {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transform: translate(-50%, -4px);
+  transform: translate(-50%, 6px);
   transition:
-    opacity 0.25s ease,
-    visibility 0.25s ease,
-    transform 0.25s ease;
+    opacity 0.3s ease,
+    visibility 0.3s ease,
+    transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .skill:hover .skill-tip,
@@ -304,7 +325,7 @@ body {
 
 .skill-row > .skill:first-child .skill-tip {
   left: 0;
-  transform: translateY(-4px);
+  transform: translateY(6px);
 }
 
 .skill-row > .skill:first-child:hover .skill-tip,
@@ -1271,6 +1292,7 @@ body {
   .hero-badge-tip,
   .company-mark,
   .skill-mark,
+  .skill-mark::before,
   .skill-tip,
   .social-link,
   .social-link::before,
