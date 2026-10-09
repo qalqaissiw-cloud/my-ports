@@ -230,6 +230,88 @@ body {
   transform: translate(-50%, 0);
 }
 
+.skill-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.skill {
+  position: relative;
+}
+
+.skill-mark {
+  display: grid;
+  place-items: center;
+  padding: 0;
+  cursor: pointer;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card);
+  color: var(--brand);
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.skill-mark svg {
+  width: 1.45rem;
+  height: 1.45rem;
+}
+
+.skill:hover .skill-mark,
+.skill-mark:focus-visible {
+  border-color: color-mix(in srgb, var(--brand) 40%, var(--border));
+  color: var(--brand);
+}
+
+.skill-mark:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 3px;
+}
+
+.skill-tip {
+  position: absolute;
+  top: calc(100% + 0.45rem);
+  left: 50%;
+  z-index: 20;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  background: var(--brand);
+  color: #fff;
+  font-size: 12px;
+  line-height: 1.3;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translate(-50%, -4px);
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease,
+    transform 0.25s ease;
+}
+
+.skill:hover .skill-tip,
+.skill:focus-within .skill-tip {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+
+.skill-row > .skill:first-child .skill-tip {
+  left: 0;
+  transform: translateY(-4px);
+}
+
+.skill-row > .skill:first-child:hover .skill-tip,
+.skill-row > .skill:first-child:focus-within .skill-tip {
+  transform: none;
+}
+
 .hero-badge:first-child .hero-badge-tip {
   left: 0;
   text-align: left;
@@ -1188,6 +1270,8 @@ body {
   .hero-badge a,
   .hero-badge-tip,
   .company-mark,
+  .skill-mark,
+  .skill-tip,
   .social-link,
   .social-link::before,
   .social-tip,

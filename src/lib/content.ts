@@ -308,7 +308,7 @@ export const skillGroups = [
   },
   {
     title: "Operating systems",
-    items: ["Windows", "Linux (Kali, Fedora)"],
+    items: ["Windows", "Kali Linux", "Fedora"],
   },
   {
     title: "Languages",
