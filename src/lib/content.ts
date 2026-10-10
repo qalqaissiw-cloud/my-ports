@@ -296,18 +296,18 @@ export const projects: Project[] = [
     ],
     shots: [
       {
-        src: "/projects/fast/01.jpg",
-        width: 1600,
-        height: 793,
-        title: "Forecast",
-        text: "The 2026 volume forecast, starting from the audited 2025 baseline and adjusting for growth, demand, and logistics drag.",
-      },
-      {
         src: "/projects/fast/02.jpg",
         width: 1600,
         height: 792,
         title: "Home",
         text: "The signed-in home screen, with recent tools and office clocks for Shanghai, Amman, Detroit, and Juárez.",
+      },
+      {
+        src: "/projects/fast/01.jpg",
+        width: 1600,
+        height: 793,
+        title: "Forecast",
+        text: "The 2026 volume forecast, starting from the audited 2025 baseline and adjusting for growth, demand, and logistics drag.",
       },
       {
         src: "/projects/fast/03.jpg",
@@ -440,18 +440,18 @@ export const projects: Project[] = [
     hrefLabel: "Visit Adawat",
     shots: [
       {
-        src: "/projects/adawat/01.jpg",
-        width: 1600,
-        height: 795,
-        title: "Carrier tracking",
-        text: "A live map of a delivery route, with dispatch controls to draft a route or send it out for delivery.",
-      },
-      {
         src: "/projects/adawat/02.jpg",
         width: 1600,
         height: 795,
         title: "Storefront",
         text: "The public homepage for the wholesale catalog of industrial tools, electrical supplies, and workshop equipment.",
+      },
+      {
+        src: "/projects/adawat/01.jpg",
+        width: 1600,
+        height: 795,
+        title: "Carrier tracking",
+        text: "A live map of a delivery route, with dispatch controls to draft a route or send it out for delivery.",
       },
       {
         src: "/projects/adawat/03.jpg",
