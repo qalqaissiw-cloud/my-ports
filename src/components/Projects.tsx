@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { CSSProperties } from "react";
 import { projects, type Project } from "../lib/content";
+import { ProjectShots } from "./ProjectShots";
 import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
 
@@ -63,8 +64,8 @@ export function Projects() {
                   <h3 className="mt-2 text-lg font-medium tracking-tight">{project.name}</h3>
                   <p className="mt-2 text-[14px] leading-6 text-foreground/80">{project.description}</p>
                   <p className="mt-3 text-[12px] text-muted">{project.tags.join("  ·  ")}</p>
-                  {project.href || project.links?.length ? (
-                    <div className="mt-auto flex flex-wrap gap-x-5 gap-y-2 pt-5">
+                  {project.href || project.links?.length || project.shots?.length ? (
+                    <div className="mt-auto flex flex-wrap items-baseline gap-x-5 gap-y-2 pt-5">
                       {project.href ? (
                         <a
                           href={project.href}
@@ -86,6 +87,7 @@ export function Projects() {
                           {link.label}
                         </a>
                       ))}
+                      {project.shots?.length ? <ProjectShots shots={project.shots} name={project.name} /> : null}
                     </div>
                   ) : (
                     <p className="mt-auto pt-5 text-[13px] text-muted">Internal case study</p>

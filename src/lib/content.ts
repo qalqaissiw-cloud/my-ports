@@ -21,7 +21,7 @@ export const socials = {
 } as const;
 
 export const site = {
-  url: "https://qalqaissi.netlify.app",
+  url: "https://qalqaissi.vercel.app",
 } as const;
 
 export const cv = {
@@ -155,6 +155,7 @@ export type Project = {
   hrefLabel?: string;
   links?: { href: string; label: string }[];
   stats?: string;
+  shots?: { src: string; width: number; height: number; title: string; text: string }[];
   cover: {
     brand: string;
     image?: { src: string; width: number; height: number };
@@ -174,6 +175,64 @@ export const projects: Project[] = [
     href: "https://thezeroday.org/",
     hrefLabel: "Visit site",
     stats: "32 sources · refreshed every 15 min",
+    shots: [
+      {
+        src: "/projects/the-zero-day/01.jpg",
+        width: 1600,
+        height: 792,
+        title: "News",
+        text: "The front page groups the day's cybersecurity headlines, marks stories covered by several outlets, and surfaces the CVEs those articles discuss.",
+      },
+      {
+        src: "/projects/the-zero-day/02.jpg",
+        width: 1600,
+        height: 794,
+        title: "Threat landscape",
+        text: "A day-by-day view of what the news is reporting, split by threat type, with the busiest day and the mix of vulnerabilities, AI security, and policy.",
+      },
+      {
+        src: "/projects/the-zero-day/03.jpg",
+        width: 1600,
+        height: 797,
+        title: "Vulnerability",
+        text: "One CVE page: the official description, a timeline from publication to exploitation, and a patch-priority score built from severity, KEV, EPSS, and news coverage.",
+      },
+      {
+        src: "/projects/the-zero-day/04.jpg",
+        width: 1600,
+        height: 797,
+        title: "Trends",
+        text: "How often vulnerabilities are confirmed exploited, how many days pass from publication to a CISA listing, and how many new CVEs arrive.",
+      },
+      {
+        src: "/projects/the-zero-day/05.jpg",
+        width: 1600,
+        height: 792,
+        title: "New CVEs",
+        text: "CVEs published to the NVD each day, stacked by severity, beside the vendors showing up most often.",
+      },
+      {
+        src: "/projects/the-zero-day/06.jpg",
+        width: 1600,
+        height: 792,
+        title: "Watched product",
+        text: "A product the reader follows, with its open CVEs, how many are exploited, and the articles written about it.",
+      },
+      {
+        src: "/projects/the-zero-day/07.jpg",
+        width: 1600,
+        height: 794,
+        title: "Briefings",
+        text: "A daily and weekly summary of the most widely covered stories, with each sentence linked back to the outlets that reported it.",
+      },
+      {
+        src: "/projects/the-zero-day/08.jpg",
+        width: 1600,
+        height: 791,
+        title: "Outlet overlap",
+        text: "Which newsrooms cover the same stories, and how much of each outlet's reporting is shared versus exclusive.",
+      },
+    ],
     cover: {
       brand: "#0c0c0c",
       image: { src: "/projects/the-zero-day.png", width: 1500, height: 500 },
@@ -235,6 +294,64 @@ export const projects: Project[] = [
         label: "Product guide",
       },
     ],
+    shots: [
+      {
+        src: "/projects/fast/01.jpg",
+        width: 1600,
+        height: 793,
+        title: "Forecast",
+        text: "The 2026 volume forecast, starting from the audited 2025 baseline and adjusting for growth, demand, and logistics drag.",
+      },
+      {
+        src: "/projects/fast/02.jpg",
+        width: 1600,
+        height: 792,
+        title: "Home",
+        text: "The signed-in home screen, with recent tools and office clocks for Shanghai, Amman, Detroit, and Juárez.",
+      },
+      {
+        src: "/projects/fast/03.jpg",
+        width: 1600,
+        height: 792,
+        title: "Sales",
+        text: "Marketplace sales for a chosen month, with weekly revenue and a day-by-day performance view.",
+      },
+      {
+        src: "/projects/fast/04.jpg",
+        width: 1600,
+        height: 794,
+        title: "Breaks",
+        text: "Shift status for agents, with time used, time remaining, and controls to start or adjust a break.",
+      },
+      {
+        src: "/projects/fast/05.jpg",
+        width: 1600,
+        height: 790,
+        title: "Activity",
+        text: "Application requests over time, filterable by user, path, and view, and exportable.",
+      },
+      {
+        src: "/projects/fast/06.jpg",
+        width: 1200,
+        height: 793,
+        title: "Carrier billing",
+        text: "The FedEx review that flags weight adjustments, address corrections, zone overcharges, and tracking numbers billed more than once.",
+      },
+      {
+        src: "/projects/fast/07.jpg",
+        width: 1188,
+        height: 790,
+        title: "Trip tracking",
+        text: "A weekly trip report: how many trips and tracking numbers ran, and which trips were late past 36 hours.",
+      },
+      {
+        src: "/projects/fast/08.jpg",
+        width: 1193,
+        height: 785,
+        title: "Market share",
+        text: "Detroit Axle's share against competitors across the selected categories, week over week.",
+      },
+    ],
     cover: { brand: "#006098", mark: "FAST" },
   },
   {
@@ -253,6 +370,64 @@ export const projects: Project[] = [
     tags: ["Full-stack", "Web", "SMB", "Jordan"],
     href: "https://weavers-jo.netlify.app/",
     hrefLabel: "Visit site",
+    shots: [
+      {
+        src: "/projects/weavers/01.jpg",
+        width: 1600,
+        height: 795,
+        title: "Home",
+        text: "The studio homepage: web solutions for small and medium-sized businesses, with a way to start a project or browse the services.",
+      },
+      {
+        src: "/projects/weavers/02.jpg",
+        width: 1600,
+        height: 797,
+        title: "Contact",
+        text: "A contact page with the expected response time and a form to request a free consultation.",
+      },
+      {
+        src: "/projects/weavers/03.jpg",
+        width: 1600,
+        height: 798,
+        title: "Live quote",
+        text: "A short questionnaire that estimates a price with no sign-up, starting with the kind of project.",
+      },
+      {
+        src: "/projects/weavers/04.jpg",
+        width: 1600,
+        height: 797,
+        title: "Project types",
+        text: "The first step lists what can be built, from a landing page to a store or dashboard, and asks for a budget.",
+      },
+      {
+        src: "/projects/weavers/05.jpg",
+        width: 1600,
+        height: 797,
+        title: "Services",
+        text: "The services page, opening with custom website design and development rather than templates.",
+      },
+      {
+        src: "/projects/weavers/06.jpg",
+        width: 1600,
+        height: 796,
+        title: "Process",
+        text: "The six steps from discovery and strategy through design, development, testing, and launch.",
+      },
+      {
+        src: "/projects/weavers/07.jpg",
+        width: 1600,
+        height: 794,
+        title: "Why Weavers",
+        text: "Custom builds, WhatsApp-first contact, work from Amman and abroad, and a published price range.",
+      },
+      {
+        src: "/projects/weavers/08.jpg",
+        width: 1600,
+        height: 796,
+        title: "Close",
+        text: "The end of the page, with a call to start a project or chat on WhatsApp, plus the site links.",
+      },
+    ],
     cover: { brand: "linear-gradient(135deg, #9a1028 0%, #dc143c 100%)", mark: "Weavers" },
   },
   {
@@ -263,6 +438,64 @@ export const projects: Project[] = [
     tags: ["Full-stack", "B2B", "B2C", "React", "PostgreSQL"],
     href: "https://adawat.net",
     hrefLabel: "Visit Adawat",
+    shots: [
+      {
+        src: "/projects/adawat/01.jpg",
+        width: 1600,
+        height: 795,
+        title: "Carrier tracking",
+        text: "A live map of a delivery route, with dispatch controls to draft a route or send it out for delivery.",
+      },
+      {
+        src: "/projects/adawat/02.jpg",
+        width: 1600,
+        height: 795,
+        title: "Storefront",
+        text: "The public homepage for the wholesale catalog of industrial tools, electrical supplies, and workshop equipment.",
+      },
+      {
+        src: "/projects/adawat/03.jpg",
+        width: 1600,
+        height: 791,
+        title: "Brands",
+        text: "Every brand in the catalog, from the storefront's brand index.",
+      },
+      {
+        src: "/projects/adawat/04.jpg",
+        width: 1600,
+        height: 788,
+        title: "Brand catalog",
+        text: "One brand's products, with category filters and sorting.",
+      },
+      {
+        src: "/projects/adawat/05.jpg",
+        width: 1600,
+        height: 792,
+        title: "Cart",
+        text: "The full product list, with a cart for quantity, a promo code, and checkout.",
+      },
+      {
+        src: "/projects/adawat/06.jpg",
+        width: 1600,
+        height: 795,
+        title: "Business account",
+        text: "The B2B home for a signed-in buyer: available products, open orders, and shortcuts into the catalog and bulk order.",
+      },
+      {
+        src: "/projects/adawat/07.jpg",
+        width: 1600,
+        height: 793,
+        title: "Sign in",
+        text: "The trade-account sign-in for shops, factories, and distributors.",
+      },
+      {
+        src: "/projects/adawat/08.jpg",
+        width: 1600,
+        height: 798,
+        title: "Operations",
+        text: "The internal admin view of sales, orders, and the daily report for the team running the store.",
+      },
+    ],
     cover: { brand: "#ff9200", logo: "/logos/adawat.svg" },
   },
   {
