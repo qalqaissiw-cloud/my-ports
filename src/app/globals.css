@@ -693,7 +693,8 @@ body {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 2.5rem 100%, 0 calc(100% - 2.5rem));
   transition:
     height 0.6s cubic-bezier(0.22, 1, 0.36, 1),
-    clip-path 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    clip-path 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.5s ease;
 }
 
 .project-cover::after {
@@ -752,14 +753,16 @@ body {
 }
 
 .project-banner {
-  filter: grayscale(1);
   mix-blend-mode: lighten;
-  transition: filter 0.5s ease;
+  transition: mix-blend-mode 0.5s ease;
 }
 
 .project-card:is(:hover, :focus-within) .project-banner {
-  filter: none;
   mix-blend-mode: normal;
+}
+
+.project-card:is(:hover, :focus-within) .project-cover {
+  filter: none;
 }
 
 .project-logo {
@@ -819,6 +822,7 @@ body {
   .project-card:not(:hover, :focus-within) .project-cover {
     height: 100%;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 100%);
+    filter: grayscale(1);
   }
 
   .project-card:not(:hover, :focus-within) .project-cover::after,
