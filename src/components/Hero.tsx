@@ -6,22 +6,22 @@ export function Hero() {
   return (
     <section className="overflow-x-clip px-6 py-24 sm:px-8 sm:py-32">
       <div className="mx-auto w-full max-w-5xl">
-        <div className="grid items-end gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(240px,340px)] lg:gap-14">
-          <div>
+        <div className="hero-layout">
+          <div className="hero-copy">
             <p className="hero-in hero-in-1 section-label">Amman, Jordan</p>
             <h1
               id="hero-name"
-              className="hero-in hero-in-2 mt-6 max-w-3xl text-4xl font-medium tracking-tight text-foreground sm:text-5xl lg:text-[56px] lg:leading-[1.1]"
+              className="hero-in hero-in-2 mt-6 text-4xl font-medium tracking-tight text-foreground sm:text-5xl lg:text-[56px] lg:leading-[1.1]"
             >
               {profile.name}
             </h1>
-            <p className="hero-in hero-in-3 mt-6 max-w-2xl text-[17px] leading-8 text-muted">
+            <p className="hero-in hero-in-3 mt-6 text-[17px] leading-8 text-muted">
               {profile.title}
             </p>
-            <p className="hero-in hero-in-4 mt-6 max-w-2xl text-[16px] leading-8 text-foreground/85">
+            <p className="hero-in hero-in-4 mt-6 text-[16px] leading-8 text-foreground/85">
               {profile.pitch}
             </p>
-            <p className="hero-in hero-in-4 mt-3 max-w-2xl text-[14px] leading-7 text-muted">
+            <p className="hero-in hero-in-4 mt-3 text-[14px] leading-7 text-muted">
               {profile.availability}
             </p>
 
@@ -45,15 +45,14 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="hero-in hero-in-3 hero-portrait justify-self-center lg:justify-self-end">
+          <div className="hero-in hero-in-3 hero-portrait">
             <Image
               src="/qais-portrait.png"
               alt={`${profile.name} sitting cross-legged with a laptop`}
               width={880}
               height={1062}
               priority
-              sizes="(min-width: 1024px) 340px, min(70vw, 320px)"
-              className="h-auto w-[min(70vw,320px)] lg:w-full"
+              sizes="(min-width: 1024px) 480px, min(78vw, 380px)"
             />
           </div>
         </div>
