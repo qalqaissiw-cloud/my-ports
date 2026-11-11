@@ -177,7 +177,8 @@ export const projects: Project[] = [
     stats: "Live · Amman",
     cover: {
       brand: "#1a1612",
-      image: { src: "/projects/one-piece.png", width: 1500, height: 500 },
+      logo: "/logos/one-piece.png",
+      logoShape: "wide",
     },
     shots: [
       {
