@@ -2,7 +2,7 @@
 
 :root {
   --background: #f7f6f3;
-  --page-max: 100%;
+  --page-max: 80rem;
   --foreground: #161616;
   --muted: #5f5f5b;
   --card: #ffffff;

@@ -205,7 +205,7 @@ export function Certifications() {
   const leaveClass = motion === "prev" ? "to-prev" : "to-next";
 
   return (
-    <section id="certifications" className="scroll-mt-24 px-4 py-20 sm:px-5 lg:px-5">
+    <section id="certifications" className="scroll-mt-24 px-5 py-20 sm:px-6 lg:px-8">
       <div className="page-shell">
         <Reveal>
           <SectionHeading

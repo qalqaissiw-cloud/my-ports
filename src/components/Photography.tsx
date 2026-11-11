@@ -96,7 +96,7 @@ export function Photography() {
   const leaveClass = motion === "prev" ? "to-prev" : "to-next";
 
   return (
-    <section id="photography" className="scroll-mt-24 px-4 py-20 sm:px-5 lg:px-5">
+    <section id="photography" className="scroll-mt-24 px-5 py-20 sm:px-6 lg:px-8">
       <div className="page-shell">
         <Reveal>
           <SectionHeading

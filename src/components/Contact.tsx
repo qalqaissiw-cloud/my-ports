@@ -18,7 +18,7 @@ const rows = [
 
 export function Contact() {
   return (
-    <section id="contact" className="scroll-mt-24 px-4 py-20 sm:px-5 lg:px-5">
+    <section id="contact" className="scroll-mt-24 px-5 py-20 sm:px-6 lg:px-8">
       <div className="page-shell">
         <Reveal>
           <SectionHeading index="08" title="Contact" description={profile.availability} />

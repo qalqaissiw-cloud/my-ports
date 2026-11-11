@@ -4,7 +4,7 @@ import { SocialLinks } from "./SocialLinks";
 
 export function Hero() {
   return (
-    <section className="overflow-x-clip px-4 py-24 sm:px-5 sm:py-32 lg:px-5">
+    <section className="overflow-x-clip px-5 py-24 sm:px-6 sm:py-32 lg:px-8">
       <div className="page-shell">
         <div className="hero-layout">
           <div className="hero-copy">
