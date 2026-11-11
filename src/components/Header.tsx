@@ -115,6 +115,14 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-sm">
       <div className="page-shell flex h-16 items-center justify-between px-5 sm:px-6 lg:px-8">
         <div className="flex min-w-0 items-center">
+          <a
+            href="#top"
+            className={`text-[13px] font-medium tracking-[0.08em] text-foreground lg:hidden ${showName || open ? "opacity-0" : "opacity-100"} transition-opacity`}
+            aria-hidden={showName || open ? true : undefined}
+            tabIndex={showName || open ? -1 : undefined}
+          >
+            {profile.monogram}
+          </a>
           <span
             className={`nav-reveal nav-reveal-name ${showName || open ? "is-open" : ""} ${ready ? "is-ready" : ""}`}
           >
