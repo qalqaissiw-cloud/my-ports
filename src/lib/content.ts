@@ -476,7 +476,8 @@ export const projects: Project[] = [
       },
     ],
     cover: {
-      brand: "#14080c",
+      brand: "#060607",
+      logo: "/logos/weavers.svg",
       image: { src: "/projects/weavers.jpg", width: 1500, height: 500 },
     },
   },
@@ -548,6 +549,7 @@ export const projects: Project[] = [
     ],
     cover: {
       brand: "#ff9200",
+      logo: "/logos/adawat.svg",
       image: { src: "/projects/adawat.jpg", width: 1500, height: 500 },
     },
   },
