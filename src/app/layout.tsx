@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Instrument_Sans } from "next/font/google";
+import { HideNetlifyBadge } from "../components/HideNetlifyBadge";
 import { profile, site } from "../lib/content";
 import "./globals.css";
 
@@ -75,6 +76,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         >
           Skip to content
         </a>
+        <HideNetlifyBadge />
         {children}
       </body>
     </html>
