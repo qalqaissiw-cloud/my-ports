@@ -11,8 +11,6 @@
       <stop offset="100%" stop-color="#eceae4"/>
     </linearGradient>
   </defs>
-  <rect width="100" height="100" rx="18" fill="#060607"/>
-  <rect width="100" height="100" rx="18" fill="none" stroke="#25252d" stroke-width="1"/>
   <!-- Thread weave (subtle) -->
   <g opacity=".22" stroke="#dc143c" fill="none" stroke-linecap="round">
     <path d="M6 40 C34 30 66 52 94 42" stroke-width="1.6"/>

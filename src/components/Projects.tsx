@@ -7,14 +7,9 @@ import { SectionHeading } from "./SectionHeading";
 
 function ProjectCover({ project, index }: { project: Project; index: number }) {
   const { cover } = project;
-  const revealShot = Boolean(cover.logo && cover.image);
 
   return (
-    <div
-      className="project-cover"
-      data-reveal={revealShot ? "shot" : undefined}
-      style={{ "--brand": cover.brand } as CSSProperties}
-    >
+    <div className="project-cover" style={{ "--brand": cover.brand } as CSSProperties}>
       {cover.image ? (
         <Image
           src={cover.image.src}
