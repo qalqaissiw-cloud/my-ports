@@ -219,7 +219,7 @@ export const projects: Project[] = [
     tags: ["Django", "React", "TypeScript", "PostgreSQL", "Threat intel", "Vercel"],
     href: "https://thezeroday.org/",
     hrefLabel: "Visit site",
-    stats: "32 sources · refreshed every 15 min",
+    stats: "100K visitors / month · 32 sources · every 15 min",
     shots: [
       {
         src: "/projects/the-zero-day/01.jpg",
