@@ -8,7 +8,7 @@ export function Skills() {
     <section id="skills" className="scroll-mt-24 overflow-x-clip px-5 py-20 sm:px-6 lg:px-8">
       <div className="page-shell">
         <Reveal>
-          <SectionHeading index="06" title="Capabilities" />
+          <SectionHeading index="05" title="Capabilities" />
         </Reveal>
 
         <div className="mt-4 divide-y divide-border">

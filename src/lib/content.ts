@@ -36,8 +36,8 @@ export const navItems = [
   { href: "#experience", label: "Experience" },
   { href: "#projects", label: "Projects", after: "hero-links" },
   { href: "#certifications", label: "Certifications" },
-  { href: "#photography", label: "Photography", after: "hero-links" },
   { href: "#skills", label: "Skills" },
+  { href: "#photography", label: "Photography", after: "hero-links" },
   { href: "#education", label: "Education" },
   { href: "#contact", label: "Contact", after: "hero-links" },
 ] as const;

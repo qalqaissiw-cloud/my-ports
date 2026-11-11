@@ -100,7 +100,7 @@ export function Photography() {
       <div className="page-shell">
         <Reveal>
           <SectionHeading
-            index="05"
+            index="06"
             title="Photography"
             description={`${photography.summary} ${photography.place} · ${photography.camera}.`}
           />
