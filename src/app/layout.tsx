@@ -47,10 +47,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/photos/lujiazui.jpg",
-        width: 1800,
-        height: 1200,
-        alt: "Shanghai skyline, photographed by Qais Alqaissi",
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Qais M. Alqaissi — cybersecurity, R&D, full-stack, photographer",
       },
     ],
   },
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Qais Alqaissi · Portfolio",
     description: profile.pitch,
-    images: ["/photos/lujiazui.jpg"],
+    images: ["/og.png"],
   },
   alternates: {
     canonical: site.url,
