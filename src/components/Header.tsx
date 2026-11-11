@@ -113,7 +113,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-sm">
-      <div className="mx-auto flex h-16 w-full max-w-5xl items-center justify-between px-6 sm:px-8">
+      <div className="page-shell flex h-16 items-center justify-between px-4 sm:px-5 lg:px-5">
         <div className="flex min-w-0 items-center">
           <span
             className={`nav-reveal nav-reveal-name ${showName || open ? "is-open" : ""} ${ready ? "is-ready" : ""}`}
@@ -181,7 +181,7 @@ export function Header() {
       </div>
 
       <div id="mobile-nav" className="mobile-menu lg:hidden" data-open={open} inert={!open}>
-        <div className="mx-auto flex min-h-full w-full max-w-5xl flex-col px-6 pb-8 pt-4 sm:px-8">
+        <div className="page-shell flex min-h-full flex-col px-4 pb-8 pt-4 sm:px-5 lg:px-5">
           <nav aria-label="Sections">
             <ol className="mobile-menu-list">
               {navItems.map((item, index) => (

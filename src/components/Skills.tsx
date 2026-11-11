@@ -5,8 +5,8 @@ import { SkillMarks } from "./SkillMarks";
 
 export function Skills() {
   return (
-    <section id="skills" className="scroll-mt-24 overflow-x-clip px-6 py-20 sm:px-8">
-      <div className="mx-auto w-full max-w-5xl">
+    <section id="skills" className="scroll-mt-24 overflow-x-clip px-4 py-20 sm:px-5 lg:px-5">
+      <div className="page-shell">
         <Reveal>
           <SectionHeading index="06" title="Capabilities" />
         </Reveal>

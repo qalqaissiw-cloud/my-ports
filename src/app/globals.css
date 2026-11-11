@@ -2,6 +2,7 @@
 
 :root {
   --background: #f7f6f3;
+  --page-max: 100%;
   --foreground: #161616;
   --muted: #5f5f5b;
   --card: #ffffff;
@@ -56,6 +57,13 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
 }
+
+.page-shell {
+  margin-inline: auto;
+  width: 100%;
+  max-width: var(--page-max);
+}
+
 
 ::selection {
   background: #dce3ea;
@@ -137,10 +145,10 @@ body {
 
   .hero-portrait {
     justify-self: end;
-    width: min(104%, 32rem);
+    width: min(100%, 30rem);
     margin-top: 0;
-    margin-right: -2rem;
-    margin-left: -2.5rem;
+    margin-right: 0;
+    margin-left: -1rem;
     transform: translateY(1.75rem);
   }
 }
