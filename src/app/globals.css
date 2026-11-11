@@ -99,6 +99,16 @@ body {
 .hero-in-5 { animation-delay: 0.52s; }
 .hero-in-6 { animation-delay: 0.64s; }
 
+.hero-portrait {
+  position: relative;
+  max-width: 20rem;
+}
+
+.hero-portrait img {
+  display: block;
+  filter: drop-shadow(0 18px 40px rgba(20, 24, 32, 0.14));
+}
+
 .hero-badge {
   position: relative;
 }
