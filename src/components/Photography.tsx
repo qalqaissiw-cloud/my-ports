@@ -100,7 +100,7 @@ export function Photography() {
       <div className="mx-auto w-full max-w-5xl">
         <Reveal>
           <SectionHeading
-            index="04"
+            index="05"
             title="Photography"
             description={`${photography.summary} ${photography.place} · ${photography.camera}.`}
           />

@@ -19,9 +19,9 @@ export default function Home() {
         <About />
         <Experience />
         <Projects />
+        <Certifications />
         <Photography />
         <Skills />
-        <Certifications />
         <Education />
         <Contact />
       </main>

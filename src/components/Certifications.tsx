@@ -209,7 +209,7 @@ export function Certifications() {
       <div className="mx-auto w-full max-w-5xl">
         <Reveal>
           <SectionHeading
-            index="06"
+            index="04"
             title="Certifications"
             description={`${certificationList.length} credentials and ${pageCount} certificates from ${issuerCount} issuers, led by security and backed by cloud, data, and business coursework. Select any certificate to view it full size.`}
           />

@@ -34,9 +34,9 @@ export const navItems = [
   { href: "#about", label: "About" },
   { href: "#experience", label: "Experience" },
   { href: "#projects", label: "Projects", after: "hero-links" },
+  { href: "#certifications", label: "Certifications" },
   { href: "#photography", label: "Photography", after: "hero-links" },
   { href: "#skills", label: "Skills" },
-  { href: "#certifications", label: "Certifications" },
   { href: "#education", label: "Education" },
   { href: "#contact", label: "Contact", after: "hero-links" },
 ] as const;
@@ -105,7 +105,7 @@ export const experience: ExperienceRole[] = [
     href: "https://weavers-jo.netlify.app/",
     colors: ["#1c2b3a", "#8b8680", "#c4b8a5"],
     highlights: [
-      "Designed and developed a full-featured restaurant website for One Piece, a restaurant based in Jordan.",
+      "Designed and developed a full-featured restaurant website for One Piece Burger (one-piece-burger.com), covering menu, ordering, story, and location.",
     ],
   },
   {
@@ -166,6 +166,50 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  {
+    name: "One Piece Burger",
+    category: "Client",
+    description:
+      "Restaurant site for One Piece in Amman’s 7th Circle — menu and drinks carousels, story, location, and ordering flows — built end to end with a cream, black, and gold food-led look.",
+    tags: ["React", "Vite", "Netlify", "Client work", "Jordan"],
+    href: "https://one-piece-burger.com/",
+    hrefLabel: "Visit site",
+    stats: "Live · Amman",
+    cover: {
+      brand: "#1a1612",
+      image: { src: "/projects/one-piece.png", width: 1500, height: 500 },
+    },
+    shots: [
+      {
+        src: "/projects/one-piece-hero.png",
+        width: 1200,
+        height: 750,
+        title: "Hero",
+        text: "Split landing for One Piece at 7th Circle — cream headline, gold accent, and the hero burger.",
+      },
+      {
+        src: "/projects/one-piece-burgers.png",
+        width: 1200,
+        height: 750,
+        title: "Burgers",
+        text: "The burger carousel, with Luffy front and center among the lineup.",
+      },
+      {
+        src: "/projects/one-piece-story.png",
+        width: 1200,
+        height: 750,
+        title: "Story",
+        text: "Drinks carousel into the kitchen story — Amman roots, handcrafted patties, signature sauces.",
+      },
+      {
+        src: "/projects/one-piece-mobile.png",
+        width: 560,
+        height: 1211,
+        title: "Mobile",
+        text: "Phone layout with straw-hat mark, order CTA, and full-bleed burger hero.",
+      },
+    ],
+  },
   {
     name: "The Zero Day",
     category: "Personal",
@@ -497,14 +541,6 @@ export const projects: Project[] = [
       },
     ],
     cover: { brand: "#ff9200", logo: "/logos/adawat.svg" },
-  },
-  {
-    name: "One Piece Restaurant",
-    category: "Client",
-    description:
-      "Full-featured restaurant website designed and developed for One Piece, a restaurant based in Jordan.",
-    tags: ["Full-stack", "Web", "Client work"],
-    cover: { brand: "#7a1f1a", mark: "OP" },
   },
 ];
 
