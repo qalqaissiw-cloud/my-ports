@@ -11,13 +11,14 @@ export const profile = {
   availability:
     "Open to cybersecurity, R&D, and full-stack roles, remote or based in Amman.",
   summary:
-    "I'm a cybersecurity graduate and R&D Acting Team Lead at Detroit Axle, where I build secure internal tools and automate the audits behind day-to-day operations. I lead development of FAST, a company-wide platform whose automated FedEx billing audits cover roughly 5 million records and save more than $20K per week. At the National Cyber Security Center of Jordan I worked on penetration testing and blue-team defense, and I hold ISC2 CC, Fortinet FCF, and Security Blue Team BTJA certifications. Beyond that, I built The Zero Day, a live vulnerability-intelligence platform, maintain the open-source security tools Caeruleum, Vigil, and Aurum, and deliver full-stack systems for clients in Jordan. I also photograph travel and architecture, including a body of work from Shanghai.",
+    "I'm a cybersecurity graduate and R&D Acting Team Lead at Detroit Axle, where I build secure internal tools and automate the audits behind day-to-day operations. I lead development of FAST, a company-wide platform whose automated FedEx billing audits cover roughly 5 million records and save more than $20K per week. At the National Cyber Security Center of Jordan I worked on penetration testing and blue-team defense, and I hold ISC2 CC, Fortinet FCF, and Security Blue Team BTJA certifications. Beyond that, I built The Zero Day — a live vulnerability-intelligence platform with about 100K visitors a month — maintain the open-source security tools Caeruleum, Vigil, and Aurum, and deliver full-stack client work in Jordan, including One Piece Burger. I also photograph travel and architecture, including a body of work from Shanghai.",
 } as const;
 
 export const socials = {
   github: "https://github.com/Cipher-Red",
   linkedin: "https://www.linkedin.com/in/qais-alqaissi-1b9295238",
   researchgate: "https://www.researchgate.net/profile/Qais-Alqaissi",
+  zeroday: "https://thezeroday.org/",
 } as const;
 
 export const site = {
@@ -105,7 +106,8 @@ export const experience: ExperienceRole[] = [
     href: "https://weavers-jo.netlify.app/",
     colors: ["#1c2b3a", "#8b8680", "#c4b8a5"],
     highlights: [
-      "Designed and developed a full-featured restaurant website for One Piece Burger (one-piece-burger.com), covering menu, ordering, story, and location.",
+      "Run Weavers, a small studio for custom web systems for Jordan SMBs.",
+      "Designed and shipped One Piece Burger (one-piece-burger.com) end to end — menu and drinks, story, location, and ordering.",
     ],
   },
   {

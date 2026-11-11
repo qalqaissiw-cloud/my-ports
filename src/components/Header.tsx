@@ -114,10 +114,12 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-sm">
       <div className="page-shell flex h-16 items-center justify-between px-5 sm:px-6 lg:px-8">
-        <div className="flex min-w-0 items-center">
+        <div className="relative flex min-w-0 items-center">
           <a
             href="#top"
-            className={`text-[13px] font-medium tracking-[0.08em] text-foreground lg:hidden ${showName || open ? "opacity-0" : "opacity-100"} transition-opacity`}
+            className={`absolute left-0 text-[13px] font-medium tracking-[0.08em] text-foreground transition-opacity lg:hidden ${
+              showName || open ? "pointer-events-none opacity-0" : "opacity-100"
+            }`}
             aria-hidden={showName || open ? true : undefined}
             tabIndex={showName || open ? -1 : undefined}
           >

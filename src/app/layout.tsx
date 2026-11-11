@@ -30,10 +30,12 @@ export const metadata: Metadata = {
     "IEEE",
     "photography",
     "Shanghai",
+    "The Zero Day",
     "Caeruleum",
     "Vigil",
     "Aurum",
     "FAST",
+    "One Piece Burger",
   ],
   authors: [{ name: profile.name, url: "https://github.com/Cipher-Red" }],
   openGraph: {
@@ -58,12 +60,21 @@ export const metadata: Metadata = {
     description: profile.pitch,
     images: ["/photos/lujiazui.jpg"],
   },
+  alternates: {
+    canonical: site.url,
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${instrumentSans.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col bg-background font-sans text-foreground">
+        <a
+          href="#about"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-card focus:px-3 focus:py-2 focus:text-sm focus:shadow"
+        >
+          Skip to content
+        </a>
         {children}
       </body>
     </html>

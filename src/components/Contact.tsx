@@ -9,6 +9,7 @@ const rows = [
   { label: "CV", value: cv.label, href: cv.href, download: cv.filename },
   { label: "LinkedIn", value: "linkedin.com/in/qais-alqaissi", href: socials.linkedin },
   { label: "GitHub", value: "github.com/Cipher-Red", href: socials.github },
+  { label: "The Zero Day", value: "thezeroday.org", href: socials.zeroday },
   {
     label: "ResearchGate",
     value: "researchgate.net/profile/Qais-Alqaissi",

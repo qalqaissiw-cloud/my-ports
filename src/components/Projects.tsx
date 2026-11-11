@@ -23,7 +23,14 @@ function ProjectCover({ project, index }: { project: Project; index: number }) {
       ) : null}
       {cover.logo ? (
         <span className="project-logo" data-shape={cover.logoShape ?? "square"}>
-          <Image src={cover.logo} alt="" fill unoptimized className="object-contain" />
+          <Image
+            src={cover.logo}
+            alt=""
+            fill
+            unoptimized
+            className="object-contain"
+            sizes="(min-width: 1024px) 240px, 160px"
+          />
         </span>
       ) : null}
       {cover.mark ? (
@@ -47,7 +54,7 @@ export function Projects() {
           <SectionHeading
             index="03"
             title="Selected work"
-            description="Open-source security tools, internal platforms, and client systems."
+            description="Threat intel, open-source security tools, internal platforms, and client sites."
           />
         </Reveal>
 
