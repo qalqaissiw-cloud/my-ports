@@ -134,7 +134,7 @@ body {
 @media (min-width: 1024px) {
   .hero-layout {
     grid-template-columns: minmax(0, 1fr) minmax(26rem, 32rem);
-    align-items: end;
+    align-items: start;
     column-gap: 0;
     row-gap: 0;
   }
@@ -146,10 +146,11 @@ body {
   .hero-portrait {
     justify-self: end;
     width: min(100%, 30rem);
-    margin-top: 0;
+    /* Line the sticking-out head up with “Amman, Jordan”. */
+    margin-top: -4rem;
     margin-right: 0;
     margin-left: -1rem;
-    transform: translateY(5.5rem);
+    transform: none;
   }
 }
 
