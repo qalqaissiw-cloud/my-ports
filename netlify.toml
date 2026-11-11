@@ -5,6 +5,12 @@
 [build.environment]
   NODE_VERSION = "22"
 
+# Netlify’s free-tier badge mounts as a srcdoc iframe; blocking frames hides it site-wide.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "frame-src 'none'; child-src 'none'; worker-src 'self' blob:;"
+
 [[headers]]
   for = "/docs/*"
   [headers.values]
